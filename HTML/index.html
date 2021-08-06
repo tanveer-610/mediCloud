@@ -73,11 +73,160 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="nav-link btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle"
-                                role="button">Login</a>
+                            <a class="nav-link btn btn-primary text-light" data-bs-toggle="modal"
+                                href="#exampleModalToggle" role="button">Login</a>
                         </li>
-                        <li class="nav-item">
 
+
+
+
+
+                        <li class="nav-item">
+                            <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
+                                aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalToggleLabel2">Select Your Role to
+                                                Register</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+
+                                        <div class="modal-footer">
+
+
+                                            <!-- ---------------------------Doctor's registration form--------------------------- -->
+                                            <div>
+                                                <div class="modal fade" id="exampleModalToggleDoctor" aria-hidden="true"
+                                                    aria-labelledby="exampleModalToggleLabelDoctor" tabindex="-1">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title"
+                                                                    id="exampleModalToggleLabelDoctor">
+                                                                    Doctor's registration</h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form>
+                                                                    <div class="mb-3">
+                                                                        <label for="exampleInputNameDoctor"
+                                                                            class="form-label">Name</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="exampleInputNameDoctor">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="exampleInputEmailDoctor"
+                                                                            class="form-label">Email
+                                                                            address</label>
+                                                                        <input type="email" class="form-control"
+                                                                            id="exampleInputEmailDoctor"
+                                                                            aria-describedby="emailHelp">
+                                                                        <div id="emailHelp" class="form-text">We'll
+                                                                            never share your email
+                                                                            with anyone else.</div>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="exampleInputRegDoctor"
+                                                                            class="form-label">BMDC Regi. No</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="exampleInputRegDoctor">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="exampleInputPasswordDoctor"
+                                                                            class="form-label">Password</label>
+                                                                        <input type="password" class="form-control"
+                                                                            id="exampleInputPasswordDoctor">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="exampleInputPasswordConfirmDoctor"
+                                                                            class="form-label">Confirm Password</label>
+                                                                        <input type="password" class="form-control"
+                                                                            id="exampleInputPasswordConfirmDoctor">
+                                                                    </div>
+                                                                    <div class="mb-3 form-check">
+                                                                        <input type="checkbox" class="form-check-input"
+                                                                            id="exampleCheckTerms">
+                                                                        <label class="form-check-label"
+                                                                            for="exampleCheckTerms">Agree with our terms
+                                                                            & Conditions.</label>
+                                                                    </div>
+
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary">Submit</button>
+                                                                </form>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="nav-link btn btn-primary text-light me-5"
+                                                    data-bs-toggle="modal" href="#exampleModalToggleDoctor"
+                                                    role="button">Doctor Register</a>
+                                            </div>
+
+                                            <!-- -------------------------------patient registration------------------------ -->
+
+                                            <div>
+                                                <div class="modal fade" id="exampleModalTogglePatient"
+                                                    aria-hidden="true" aria-labelledby="exampleModalToggleLabelPatient"
+                                                    tabindex="-1">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title"
+                                                                    id="exampleModalToggleLabelPatient">
+                                                                    Patient Registration</h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form>
+                                                                    <div class="mb-3">
+                                                                        <label for="exampleInputEmailPatient"
+                                                                            class="form-label">Email
+                                                                            address</label>
+                                                                        <input type="email" class="form-control"
+                                                                            id="exampleInputEmailPatient"
+                                                                            aria-describedby="emailHelp">
+                                                                        <div id="emailHelp" class="form-text">We'll
+                                                                            never share your email
+                                                                            with anyone else.</div>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="exampleInputPasswordPatient"
+                                                                            class="form-label">Password</label>
+                                                                        <input type="password" class="form-control"
+                                                                            id="exampleInputPasswordPatient">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="exampleInputPasswordConfirmPatient"
+                                                                            class="form-label">Confirm Password</label>
+                                                                        <input type="password" class="form-control"
+                                                                            id="exampleInputPasswordConfirmPatient">
+                                                                    </div>
+
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary">Submit</button>
+                                                                </form>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="nav-link btn btn-primary text-light me-5"
+                                                    data-bs-toggle="modal" href="#exampleModalTogglePatient"
+                                                    role="button">Patient Register</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="nav-link btn btn-primary text-light" data-bs-toggle="modal"
+                                href="#exampleModalToggle2" role="button">Registration</a>
                         </li>
                     </ul>
                 </div>
