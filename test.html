@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediCloud</title>
+    <link
+      rel="shortcut icon"
+      href="/Assets/Icons/favicon.png"
+      type="image/x-icon"
+    />
+    <!-- -----------------------Bootstrap CSS style adding----------------- -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <!-- -----------------------------------------------Font Awesome kit-------------------------- -->
+    <script
+      src="https://kit.fontawesome.com/04ecdf395d.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- ------------------------------CSS link up ------------------------ -->
+    <link rel="stylesheet" href="/CSS/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- ------------------------navbar section starts here------------------------------- -->
+
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img
+              src="/Assets/Images/doctor.svg"
+              alt=""
+              width="30"
+              height="24"
+              class="d-inline-block align-text-top"
+            />
+            MediCloud
+          </a>
+          <button
+            class="navbar-toggler text-light"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item me-4">
+                <!-- Button trigger modal login -->
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#login"
+                >
+                  Login
+                </button>
+
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="login"
+                  data-bs-backdrop="static"
+                  data-bs-keyboard="false"
+                  tabindex="-1"
+                  aria-labelledby="loginLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="loginLabel">Modal title</h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label"
+                              >Email address</label
+                            >
+                            <input
+                              name="loginEmail"
+                              type="email"
+                              class="form-control"
+                              id="exampleInputEmail1"
+                              aria-describedby="emailHelp"
+                            />
+                            <div id="emailHelp" class="form-text">
+                              We'll never share your email with anyone else.
+                            </div>
+                          </div>
+                          <div class="mb-3">
+                            <label
+                              for="exampleInputPassword1"
+                              class="form-label"
+                              >Password</label
+                            >
+                            <input
+                              name="loginPassword"
+                              type="password"
+                              class="form-control"
+                              id="exampleInputPassword1"
+                            />
+                          </div>
+                          <div class="mb-3 form-check">
+                            <input
+                              name="loginCheckbox"
+                              type="checkbox"
+                              class="form-check-input"
+                              id="exampleCheck1"
+                            />
+                            <label class="form-check-label" for="exampleCheck1"
+                              >Check me out</label
+                            >
+                          </div>
+                          <button type="button" class="btn btn-primary">
+                            Submit
+                          </button>
+                          <!-- <button type="submit" class="btn btn-primary">
+                            Submit
+                          </button> -->
+                        </form>
+                        <!-- </div>
+                      <div class="modal-footer"> -->
+                        <!-- <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!-- ------------------regbutton----------- -->
+              <li class="nav-item">
+                <div
+                  class="modal fade"
+                  id="exampleModalToggle"
+                  aria-hidden="true"
+                  aria-labelledby="exampleModalToggleLabel"
+                  tabindex="-1"
+                >
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalToggleLabel">
+                          Select Role
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+
+                      <div class="modal-footer mx-auto">
+                        <button
+                          class="btn btn-primary me-3"
+                          data-bs-target="#doctorRegistration"
+                          data-bs-toggle="modal"
+                          data-bs-dismiss="modal"
+                        >
+                          As Doctor
+                        </button>
+                        <button
+                          class="btn btn-primary me-3"
+                          data-bs-target="#patientRegistration"
+                          data-bs-toggle="modal"
+                          data-bs-dismiss="modal"
+                        >
+                          As Patient
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Modal as doctor-->
+                <div
+                  class="modal fade"
+                  id="doctorRegistration"
+                  data-bs-backdrop="static"
+                  data-bs-keyboard="false"
+                  tabindex="-1"
+                  aria-labelledby="doctorRegistrationLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="doctorRegistrationLabel">
+                          Doctor's Registration
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="mb-3">
+                            <label
+                              for="exampleInputNameDoctor"
+                              class="form-label"
+                              >Name</label
+                            >
+                            <input
+                              name="doctorName"
+                              type="text"
+                              class="form-control"
+                              id="exampleInputNameDoctor"
+                            />
+                          </div>
+                          <div class="mb-3">
+                            <label
+                              for="exampleInputEmailDoctor"
+                              class="form-label"
+                              >Email address</label
+                            >
+                            <input
+                              name="doctorEmail"
+                              type="email"
+                              class="form-control"
+                              id="exampleInputEmailDoctor"
+                              aria-describedby="emailHelp"
+                            />
+                            <div id="emailHelp" class="form-text">
+                              We'll never share your email with anyone else.
+                            </div>
+                          </div>
+                          <div class="mb-3">
+                            <label
+                              for="exampleInputRegDoctor"
+                              class="form-label"
+                              >BMDC Regi. No</label
+                            >
+                            <input
+                              name="BMDCname"
+                              type="text"
+                              class="form-control"
+                              id="exampleInputRegDoctor"
+                            />
+                          </div>
+                          <div class="mb-3">
+                            <label
+                              for="exampleInputPasswordDoctor"
+                              class="form-label"
+                              >Password</label
+                            >
+                            <input
+                              name="doctorPassword"
+                              type="password"
+                              class="form-control"
+                              id="exampleInputPasswordDoctor"
+                            />
+                          </div>
+                          <div class="mb-3">
+                            <label
+                              for="exampleInputPasswordConfirmDoctor"
+                              class="form-label"
+                              >Confirm Password</label
+                            >
+                            <input
+                              name="doctorConfirmPassword"
+                              type="password"
+                              class="form-control"
+                              id="exampleInputPasswordConfirmDoctor"
+                            />
+                          </div>
+                          <div class="mb-3 form-check">
+                            <input
+                              name="doctorCheckbox"
+                              type="checkbox"
+                              class="form-check-input"
+                              id="exampleCheckTerms"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="exampleCheckTerms"
+                              >Agree with our terms & Conditions.</label
+                            >
+                          </div>
+
+                          <button type="button" class="btn btn-primary">
+                            Submit
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Modal as patient-->
+                <div
+                  class="modal fade"
+                  id="patientRegistration"
+                  data-bs-backdrop="static"
+                  data-bs-keyboard="false"
+                  tabindex="-1"
+                  aria-labelledby="patientRegistrationLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="patientRegistrationLabel">
+                          Patient's Registration
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="mb-3">
+                            <label
+                              for="exampleInputNamePatient"
+                              class="form-label"
+                              >Name</label
+                            >
+                            <input
+                              name="patientName"
+                              type="text"
+                              class="form-control"
+                              id="exampleInputNamePatient"
+                              aria-describedby="emailHelp"
+                            />
+                            <div id="emailHelp" class="form-text">
+                              We'll never share your email with anyone else.
+                            </div>
+                          </div>
+
+                          <div class="mb-3">
+                            <label
+                              for="exampleInputEmailPatient"
+                              class="form-label"
+                              >Email address</label
+                            >
+                            <input
+                              name="patientEmail"
+                              type="email"
+                              class="form-control"
+                              id="exampleInputEmailPatient"
+                              aria-describedby="emailHelp"
+                            />
+                            <div id="emailHelp" class="form-text">
+                              We'll never share your email with anyone else.
+                            </div>
+                          </div>
+                          <div class="mb-3">
+                            <label
+                              for="exampleInputBirthDatePatient"
+                              class="form-label"
+                              >Birth Date</label
+                            >
+                            <input
+                              name="patientBirthDate"
+                              type="date"
+                              class="form-control"
+                              id="exampleInputBirthDatePatient"
+                              aria-describedby="emailHelp"
+                            />
+                            <div id="emailHelp" class="form-text">
+                              We'll never share your email with anyone else.
+                            </div>
+                          </div>
+                          <div class="mb-3">
+                            <label
+                              for="exampleInputPasswordPatient"
+                              class="form-label"
+                              >Password</label
+                            >
+                            <input
+                              name="patientPassword"
+                              type="password"
+                              class="form-control"
+                              id="exampleInputPasswordPatient"
+                            />
+                          </div>
+                          <div class="mb-3">
+                            <label
+                              for="exampleInputPasswordConfirmPatient"
+                              class="form-label"
+                              >Confirm Password</label
+                            >
+                            <input
+                              name="patientConfirmPassword"
+                              type="password"
+                              class="form-control"
+                              id="exampleInputPasswordConfirmPatient"
+                            />
+                          </div>
+                          <button type="button" class="btn btn-primary">
+                            Submit
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <a
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  href="#exampleModalToggle"
+                  role="button"
+                  >Registration</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- -----------------------banner section starts here---------------------------  -->
+      <section class="banner d-flex align-items-center">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-6 col-sm-12">
+              <h1 class="moto">
+                Healthy People, <br />
+                Healthy Nation
+              </h1>
+              <p>
+                We look forward to providing a better & hassle-free health
+                service. <br />
+                We care about you.
+              </p>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+              <div
+                id="carouselExampleSlidesOnly"
+                class="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active carousel-item-height">
+                    <img
+                      src="/Assets/Images/Doctor-1.jpg"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="carousel-item carousel-item-height">
+                    <img
+                      src="/Assets/Images/Doctor-2.jpg"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="carousel-item carousel-item-height">
+                    <img
+                      src="/Assets/Images/Doctor-3.jpg"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main></main>
+    <footer></footer>
+
+    <!-- -------------------------------------JS bundle adding-------------------------------------------  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
