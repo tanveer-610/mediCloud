@@ -1,4 +1,12 @@
- 
+:root{
+    --primary-color:#EA493C;
+}
+.custom-color{
+ color: var(--primary-color);
+}
+.custom-form-background{
+    background-color: #DEE1E8;
+}
 .banner{
     height: 88vh;
  }
@@ -6,3 +14,47 @@
     font-size: 50px;
     font-weight: 900;
 } 
+
+.btn-style{
+    background-image: linear-gradient(#6064a1, #494E9A);
+    transition: 0.5s;
+}
+.btn-style:hover{
+    transform: scale(1.1);
+    box-shadow: 2px 2px 5px 5px  rgba(128, 128, 128,0.3);
+}
+.btn-style:hover .login-icon{
+    animation: shakeX;
+    animation-duration: 3s; 
+    animation-iteration-count: infinite;
+}
+
+
+.btn-submit-style{
+    background-color: #0D826E;
+    transition: 0.5s;
+}
+.btn-submit-style:hover{
+    transform: scale(1.1);  
+}
+.btn-submit-style i{
+    transition: 0.5s;
+}
+.btn-submit-style:hover i{
+    font-size: 1.2rem;
+    animation: pulse;
+    animation-duration: 0.5s; 
+    animation-iteration-count: infinite;
+}
+.btn-role-style{
+    background-color: rgb(76, 11, 167);
+}
+@media screen and (max-width:768px) {
+    .moto{
+        font-size: 35px;
+    } 
+    .banner{
+        height: 65vh;
+     }
+    
+}
