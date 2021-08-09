@@ -7,6 +7,8 @@
 .custom-form-background{
     background-color: #DEE1E8;
 }
+
+/*Front page css */
 .banner{
     height: 88vh;
  }
@@ -49,12 +51,57 @@
 .btn-role-style{
     background-color: rgb(76, 11, 167);
 }
+
+/* patient landing page.. */
+.navbar-shortcutlink{
+    transition: 0.5s transform;
+}
+.navbar-shortcutlink:hover{
+    transform: scale(1.2);
+}
+.navbar-shortcutlink::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: var(--primary-color);
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.navbar-shortcutlink:hover::after{
+    width: 100%;  
+}
+.welcome-msg{
+    font-size: 50px;
+    color: var(--primary-color);
+    animation: zoomIn;
+    animation-duration: 3s; 
+    animation-iteration-count: infinite;
+}
+.custom-form-background-take-appoinment{
+    background-color: #6f7277;
+}
+.btn-close-style{
+    transition: 0.5s;
+}
+.btn-close-style:hover{
+    transform: scale(1.1);  
+}
+.btn-close-style i{
+    transition: 0.5s;
+}
+.btn-close-style:hover i{
+    font-size: 1.2rem;
+    animation: pulse;
+    animation-duration: 0.5s; 
+    animation-iteration-count: infinite;
+}
 @media screen and (max-width:768px) {
-    .moto{
+    /*Front page media quiery */
+    .moto,.welcome-msg{
         font-size: 35px;
     } 
     .banner{
         height: 65vh;
-     }
-    
+     }    
 }
