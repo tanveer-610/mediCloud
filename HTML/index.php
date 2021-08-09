@@ -1,86 +1,51 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MediCloud</title>
-    <link
-      rel="shortcut icon"
-      href="/Assets/Icons/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../Assets/Icons/favicon.png" type="image/x-icon" />
     <!-- -----------------------Bootstrap CSS style adding----------------- -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
     <!-- -----------------------------------------------Font Awesome kit-------------------------- -->
-    <script
-      src="https://kit.fontawesome.com/04ecdf395d.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/04ecdf395d.js" crossorigin="anonymous"></script>
     <!-- ------------------------------CSS link up ------------------------ -->
     <link rel="stylesheet" href="../CSS/style.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <header>
-      <!-- ------------------------navbar section starts here------------------------------- -->
+        <!-- ------------------------navbar section starts here------------------------------- -->
 
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <img
-              src="/Assets/Images/doctor.svg"
-              alt=""
-              width="30"
-              height="24"
-              class="d-inline-block align-text-top"
-            />
-            MediCloud
-          </a>
-          <button
-            class="navbar-toggler text-light"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="../Assets/Images/doctor.svg" alt="" width="30" height="24" class="d-inline-block align-text-top" /> MediCloud
+                </a>
+                <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item me-4">
-                <div
-                  class="modal fade"
-                  id="exampleModalToggle"
-                  aria-hidden="true"
-                  aria-labelledby="exampleModalToggleLabel"
-                  tabindex="-1"
-                >
-                  <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalToggleLabel">
-                          Login
-                        </h5>
-                        <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
-                      </div>
-                      <div class="modal-body">
-                        <form>
-                          <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label"
-                              >Email address</label
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item me-4">
+                            <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalToggleLabel">
+                                                Login
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body" id="loginModal">
+  <!-- -------------------------------- log in form -----------------------------------  -->
+                                            <form method="POST" action="login.php">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label">Email address</label
                             >
                             <input
                               name="loginEmail"
@@ -89,6 +54,7 @@
                               id="exampleInputEmail1"
                               aria-describedby="emailHelp"
                             />
+                            
                             <div id="emailHelp" class="form-text">
                               We'll never share your email with anyone else.
                             </div>
@@ -108,16 +74,35 @@
                           </div>
                           <div class="mb-3 form-check">
                             <input
-                              name="loginCheckbox"
-                              type="checkbox"
+                              name="loginRadio"
+                              type="radio"
                               class="form-check-input"
                               id="exampleCheck1"
+                              value="Patient"
                             />
                             <label class="form-check-label" for="exampleCheck1"
-                              >Check me out</label
+                              >Patient</label
                             >
                           </div>
-                          <button type="submit" class="btn btn-primary">
+                          <div class="mb-3 form-check">
+                            <input
+                              name="loginRadio"
+                              type="radio"
+                              class="form-check-input"
+                              id="exampleCheck1"
+                              value="Doctor"
+                            />
+                            <label class="form-check-label" for="exampleCheck1"
+                              >Doctor</label
+                            >
+                          </div>
+  <!-- -----------------------------------error msg here --------------------------------- -->
+                             <?php if (isset($_GET['error'])) { ?>            
+     		                    <p class="error"><?php echo $_GET['error']; echo '<script type="text/javascript">
+                              var flag =1 ;
+                              </script>'; ?> </p>
+                                  	<?php } ?> 
+                          <button name="loginBtn" type="submit" class="btn btn-primary" value="loginBtn">
                             Submit
                           </button>
                         </form>
@@ -126,6 +111,7 @@
                   </div>
                 </div>
                 <a
+                  id="login-a-btn"
                   class="nav-link btn btn-primary text-light"
                   data-bs-toggle="modal"
                   href="#exampleModalToggle"
@@ -133,6 +119,7 @@
                   >Login</a
                 >
               </li>
+
               <li class="nav-item">
                 <div
                   class="modal fade"
@@ -182,7 +169,7 @@
                                   ></button>
                                 </div>
                                 <div class="modal-body">
-                                  <form>
+                                  <form method="POST" action="">
                                     <div class="mb-3">
                                       <label
                                         for="exampleInputNameDoctor"
@@ -315,7 +302,14 @@
                                   ></button>
                                 </div>
                                 <div class="modal-body">
-                                  <form>
+                                  <form method="POST" action="patientRegistration.php">
+
+    <!-- -------------------------------- patient regi error ---------------------------   ----------------------- -->
+                                  <?php if (isset($_GET['errorp'])) { ?>            
+     		                    <p class="error"><?php echo $_GET['errorp']; echo '<script type="text/javascript">
+                              var flag =2 ;
+                              </script>'; ?> </p>
+                                  	<?php } ?>
                                     <div class="mb-3">
                                       <label
                                         for="exampleInputNamePatient"
@@ -327,12 +321,8 @@
                                         type="text"
                                         class="form-control"
                                         id="exampleInputNamePatient"
-                                        aria-describedby="emailHelp"
+                                       
                                       />
-                                      <div id="emailHelp" class="form-text">
-                                        We'll never share your email with anyone
-                                        else.
-                                      </div>
                                     </div>
 
                                     <div class="mb-3">
@@ -354,23 +344,47 @@
                                       </div>
                                     </div>
                                     <div class="mb-3">
-                                      <label
-                                        for="exampleInputBirthDatePatient"
+                                    <label
+                                        for="exampleInputAgePatient"
                                         class="form-label"
-                                        >Birth Date</label
+                                        >Age</label
                                       >
                                       <input
-                                        name="patientBirthDate"
-                                        type="date"
+                                        name="patientAge"
+                                        type="number"
                                         class="form-control"
-                                        id="exampleInputBirthDatePatient"
-                                        aria-describedby="emailHelp"
+                                        id="exampleInputAgePatient"     
                                       />
-                                      <div id="emailHelp" class="form-text">
-                                        We'll never share your email with anyone
-                                        else.
-                                      </div>
                                     </div>
+                                    <div class="mb-3">
+                                    <label
+                                        for="exampleInputNumberPatient"
+                                        class="form-label"
+                                        >Phone Number</label
+                                      >
+                                      <input
+                                        name="patientNumber"
+                                        type="number"
+                                        class="form-control"
+                                        id="exampleInputNumberPatient"     
+                                      />
+                                    </div>
+
+                                    <div class="mb-3">
+                                      <label
+                                        for="exampleInputAddressPatient"
+                                        class="form-label"
+                                        >Address</label
+                                      >
+                                      <input
+                                        name="patientAddress"
+                                        type="text"
+                                        class="form-control"
+                                        id="exampleInputAddressPatient"
+                                        
+                                      />
+                                    </div>
+
                                     <div class="mb-3">
                                       <label
                                         for="exampleInputPasswordPatient"
@@ -410,6 +424,7 @@
                             </div>
                           </div>
                           <a
+                            id="patientRegisterBtn"
                             class="nav-link btn btn-primary text-light me-5"
                             data-bs-toggle="modal"
                             href="#exampleModalTogglePatient"
@@ -422,6 +437,7 @@
                   </div>
                 </div>
                 <a
+                  id="registrationBtn"
                   class="nav-link btn btn-primary text-light"
                   data-bs-toggle="modal"
                   href="#exampleModalToggle2"
@@ -458,21 +474,21 @@
                 <div class="carousel-inner">
                   <div class="carousel-item active carousel-item-height">
                     <img
-                      src="/Assets/Images/Doctor-1.jpg"
+                      src="../Assets/Images/Doctor-1.jpg"
                       class="d-block w-100"
                       alt="..."
                     />
                   </div>
                   <div class="carousel-item carousel-item-height">
                     <img
-                      src="/Assets/Images/Doctor-2.jpg"
+                      src="../Assets/Images/Doctor-2.jpg"
                       class="d-block w-100"
                       alt="..."
                     />
                   </div>
                   <div class="carousel-item carousel-item-height">
                     <img
-                      src="/Assets/Images/Doctor-3.jpg"
+                      src="../Assets/Images/Doctor-3.jpg"
                       class="d-block w-100"
                       alt="..."
                     />
@@ -492,7 +508,22 @@
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous">
+  </script>
+    <script>   
+      if(flag == 1){
+        
+        var login = document.getElementById("login-a-btn");
+        login.click();
+      }
+      if(flag == 2){
+        var regi = document.getElementById("registrationBtn");
+        regi.click();
+        var patient = document.getElementById("patientRegisterBtn");
+        patient.click();
+
+      }
+    </script>
+
   </body>
 </html>
