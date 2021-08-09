@@ -9,34 +9,40 @@ include "doctorDatabase.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>MediCloud</title>
+    <!-- -----------------------Favicon adding----------------- -->
+    <link rel="shortcut icon" href="../Assets/Icons/favicon.png" type="image/x-icon" />
+    <!-- -----------------------Bootstrap CSS style adding----------------- -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
     <!-- -----------------------------------------------Font Awesome kit-------------------------- -->
     <script src="https://kit.fontawesome.com/04ecdf395d.js" crossorigin="anonymous"></script>
+<!-- -----------------------------------------------Animate css-------------------------- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- ------------------------------CSS link up ------------------------ -->
     <link rel="stylesheet" href="../CSS/style.css" />
-    <title>Document</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" href="#"> <img src="../Assets/Icons/favicon.png" alt="" width="30" height="24">Medi Cloud</a>
+  <a class="navbar-brand d-flex align-items-center fw-bold fs-3" href="patientHome.php">
+                    <img src="../Assets/Images/doctor.svg" alt="" width="40" height="40" class="d-inline-block align-text-top me-2" /> <span style="color:#EA5044">Medi</span><span style="color:#555657">Cloud</span>
+                </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="patientHome.php">Home</a>
+        <li class="nav-item mx-2 fs-5">
+          <a class="nav-link active navbar-shortcutlink" aria-current="page" href="patientHome.php">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="searchDoctor.php">Search Doctor</a>
+        <li class="nav-item mx-2 fs-5">
+          <a class="nav-link active navbar-shortcutlink" aria-current="page" href="searchDoctor.php">Search Doctor</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Apointment</a>
+        <li class="nav-item mx-2 fs-5">
+          <a class="nav-link active navbar-shortcutlink" aria-current="page" href="#">Apointment</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="logout.php">Logout</a>
+        <li class="nav-item mx-2 fs-5">
+          <a class="nav-link active navbar-shortcutlink" aria-current="page" href="logout.php">Logout</a>
         </li>
         
         
@@ -46,10 +52,10 @@ include "doctorDatabase.php";
 </nav>
 
 
-<section>
+<section class="container py-4 table-responsive">
 
-<table class="table" id="myTable">
-  <thead>
+<table class="table table-striped" id="myTable">
+  <thead class="table-dark">
     <tr>
       <th scope="col">Appointment Id</th>
       <th scope="col">Docotr Id</th>
@@ -67,7 +73,7 @@ include "doctorDatabase.php";
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result) > 0){
             while($row = $result->fetch_assoc()){
-                echo "<tr id='{$i}'> <td class='row-data'> {$row["appointment_id"]} </td> <td class='row-data'> {$row["doctor_id"]} </td> <td> {$row["doctor_name"]} </td> <td class='row-data'> {$row["location"]} </td> <td> {$row["date"]}   </td> <td> <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='cancleAppointment()' >Cancle</button>  </td> </tr>";
+                echo "<tr id='{$i}'> <td class='row-data'> {$row["appointment_id"]} </td> <td class='row-data'> {$row["doctor_id"]} </td> <td> {$row["doctor_name"]} </td> <td class='row-data'> {$row["location"]} </td> <td> {$row["date"]}   </td> <td><button type='button' class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='cancleAppointment()' ><i class='far fa-times-circle me-1 animate__animated animate__tada animate__infinite'></i>Cancel</button>  </td> </tr>";
               $i++;
             }
         }
@@ -77,21 +83,21 @@ include "doctorDatabase.php";
 </table>
 
 <!-- ------------------------- modal------------------------------------ -->
-<form method="POST" action="patientAppointmentCancle.php">
+<form method="POST" action="patientAppointmentCancle.php" class="text-light">
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content custom-form-background-take-appoinment">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to cancle this appointment?</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="mb-3">
+      <div class="model-body container mb-3">
       <label for="disabledTextInput" class="form-label">Appointment Id</label>
       <input type="text" name="patientAppointmentId"  readonly="readonly" id="appointmentId" class="form-control" value="001">
      </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Confrim</button>
+        <button type="button" class="btn btn-danger text-light me-3 btn-close-style" data-bs-dismiss="modal"><i class="far fa-times-circle me-1"></i>Close</button>
+        <button type="submit" class="btn btn-submit-style text-light"><i class="far fa-check-circle me-1"></i>Confrim</button>
       </div>
     </div>
   </div>
