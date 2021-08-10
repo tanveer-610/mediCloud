@@ -2,7 +2,6 @@
 session_start();
 include "doctorDatabase.php";
 
-
 if (isset($_POST['patientAppointmentDate'])){
     $patient_id = $_SESSION['id'];
     $patient_name = $_SESSION['name'];
