@@ -84,11 +84,11 @@ include "doctorDatabase.php";
 
 <!-- ------------------------- modal------------------------------------ -->
 <form method="POST" action="patientAppointmentCancle.php" class="text-light">
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade text-secondary" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content custom-form-background-take-appoinment">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to cancle this appointment?</h5>
+        <h5 class="modal-title text-dark" id="exampleModalLabel">Are you sure you want to cancel this appointment?</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="model-body container mb-3">
@@ -97,7 +97,7 @@ include "doctorDatabase.php";
      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger text-light me-3 btn-close-style" data-bs-dismiss="modal"><i class="far fa-times-circle me-1"></i>Close</button>
-        <button type="submit" class="btn btn-submit-style text-light"><i class="far fa-check-circle me-1"></i>Confrim</button>
+        <button type="submit" class="btn btn-submit-style text-light"><i class="far fa-check-circle me-1"></i>Confirm</button>
       </div>
     </div>
   </div>

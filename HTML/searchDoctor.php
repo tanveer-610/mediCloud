@@ -65,7 +65,7 @@ $searchValue="all"
             </ul>
         </div>
         <select class="rounded-1" id="mySelect" onchange="myFilter()">
-              <option value="All" selected>All</option>
+              <option value="All" selected>Select Specialist</option>
               <option value="HEART">Heart</option>
               <option value="BONE">Bone</option>
               <option value="SURGERY">Surgery</option>
@@ -113,7 +113,7 @@ $searchValue="all"
   <div class="modal-dialog">
     <div class="modal-content custom-form-background-take-appoinment text-black">
       <div class="modal-header">
-        <h5 class="modal-title fw-bold" id="exampleModalLabel">Take Appoinment</h5>
+        <h5 class="modal-title fw-bold" id="exampleModalLabel">Take Appointment</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
