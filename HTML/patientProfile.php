@@ -1,3 +1,24 @@
+<?php
+session_start();
+include "doctorDatabase.php";
+$sql ="SELECT * FROM patient WHERE id={$_SESSION['id']};";
+$result = mysqli_query($conn, $sql);
+if(mysqli_num_rows($result) > 0){
+  $row = $result->fetch_assoc();
+  $email =$row["email"];
+  $age =$row["Age"];
+  $phone =$row["number"];
+  $address =$row["address"];
+  $password = $row["Password"];
+}else{
+  $email = "";
+  $age ="";
+  $phone = "";
+  $address ="";
+  $password="";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -133,6 +154,7 @@
                   class="btn btn-primary"
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
+                  id="editPatientProfileBtn"
                 >
                   Edit Profile
                 </button>
@@ -159,7 +181,13 @@
                         ></button>
                       </div>
                       <div class="modal-body">
-                        <form method="POST" action="patientRegistration.php">
+                        <form method="POST" action="patientProfileUpdate.php">
+                           <!-- -----------------------------------error msg here --------------------------------- -->
+                           <?php if (isset($_GET['error'])) { ?>            
+     		                    <p class="error"><?php echo $_GET['error']; echo '<script type="text/javascript">
+                              var flag =1 ;
+                              </script>'; ?> </p> <br>
+                                  	<?php } ?> 
                           <div class="mb-3">
                             <label
                               for="exampleInputNamePatient"
@@ -172,6 +200,7 @@
                               class="form-control"
                               id="exampleInputNamePatient"
                               placeholder="Write your name here..."
+                              value="<?php echo"{$_SESSION['name']}";?>"
                             />
                           </div>
 
@@ -189,6 +218,7 @@
                               aria-describedby="emailHelp"
                               placeholder="Write your email here..."
                               readonly="readonly"
+                              value="<?php echo"{$email}"; ?>"
                             />
                             <div id="emailHelp" class="form-text">
                               We'll never share your email with anyone else.
@@ -206,6 +236,7 @@
                               class="form-control"
                               id="exampleInputAgePatient"
                               placeholder="Write your age here..."
+                              value="<?php echo"{$age}"; ?>"
                             />
                           </div>
                           <div class="mb-3">
@@ -220,6 +251,7 @@
                               class="form-control"
                               id="exampleInputNumberPatient"
                               placeholder="Write your phone number here..."
+                              value="<?php echo"{$phone}";?>"
                             />
                           </div>
 
@@ -235,6 +267,7 @@
                               class="form-control"
                               id="exampleInputAddressPatient"
                               placeholder="Write your full address..."
+                              value="<?php echo"{$address}";?>"
                             />
                           </div>
 
@@ -249,7 +282,8 @@
                               type="password"
                               class="form-control"
                               id="exampleInputPasswordPatient"
-                              placeholder="Enter a password..."
+                              value="<?php echo "{$password}"?>"
+                              
                             />
                           </div>
                           <div class="mb-3">
@@ -263,10 +297,9 @@
                               type="password"
                               class="form-control"
                               id="exampleInputPasswordConfirmPatient"
-                              placeholder="Re-type your password"
+                              placeholder="*******"
                             />
                           </div>
-
                           <button
                             type="submit"
                             class="btn btn-submit-style text-white"
@@ -275,18 +308,7 @@
                           </button>
                         </form>
                       </div>
-                      <div class="modal-footer">
-                        <button
-                          type="button"
-                          class="btn btn-secondary"
-                          data-bs-dismiss="modal"
-                        >
-                          Close
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                          Save changes
-                        </button>
-                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -295,11 +317,11 @@
             <div class="col-md-8">
               <div class="card-body mt-3">
                 <div class="card-text lh-lg fs-4">
-                  <label for="patient-profile-name">Name: </label><br />
-                  <label for="patient-profile-email">Email: </label><br />
-                  <label for="patient-profile-age">Age: </label><br />
-                  <label for="patient-profile-phone">Phone: </label><br />
-                  <label for="patient-profile-phone">Address: </label>
+                  <label for="patient-profile-name">Name: <?php echo"{$_SESSION['name']}" ?> </label><br />
+                  <label for="patient-profile-email">Email: <?php echo"{$email}" ?></label><br />
+                  <label for="patient-profile-age">Age: <?php echo"{$age}" ?></label><br />
+                  <label for="patient-profile-phone">Phone: <?php echo"{$phone}" ?></label><br />
+                  <label for="patient-profile-phone">Address: <?php echo"{$address}" ?></label>
                 </div>
               </div>
             </div>
@@ -314,5 +336,15 @@
       integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
       crossorigin="anonymous"
     ></script>
+
+    <script> 
+        if(flag==1){
+                  var patientProfileUpdateModal = document.getElementById("editPatientProfileBtn");
+        patientProfileUpdateModal.click(); 
+        }  
+  
+    </script>
+
+
   </body>
 </html>
