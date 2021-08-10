@@ -2,7 +2,7 @@
   --primary-color: #ea493c;
 }
 .custom-color {
-  color: var(--primary-color);
+  color: #555657;
 }
 .custom-form-background {
   background-color: whitesmoke;
