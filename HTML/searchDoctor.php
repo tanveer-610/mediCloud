@@ -54,9 +54,9 @@ $searchValue="all"
 <div>
 </div>
 <section class="container p-4">
-    <form class="d-flex justify-content-end " action="" >
+    <form class="d-flex justify-content-end ms-5" action="" >
         
-        <input type="text" id="myInput" class="p-2 border-1 me-2 rounded-1" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+        <input type="text" id="myInput" class="p-2 border-1 rounded-1 ms-5 me-2" onkeyup="myFunction()" placeholder="Search Doctor Name" title="Type in a name">
         <div class="dropdown">
             <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="#">Heart</a></li>

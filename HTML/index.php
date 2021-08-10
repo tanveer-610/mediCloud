@@ -276,7 +276,7 @@
                             data-bs-toggle="modal"
                             href="#exampleModalToggleDoctor"
                             role="button"
-                            ><img src="../Assets/Icons/doctorReg.png" alt="" class="img-fluid"><span class="pt-1">Doctor Register</span></a
+                            ><img src="../Assets/Icons/doctorReg.png" alt="" class="img-fluid"><span class="pt-1">Register As Doctor</span></a
                           >
                         </div>
 
@@ -439,7 +439,7 @@
                             data-bs-toggle="modal"
                             href="#exampleModalTogglePatient"
                             role="button"
-                            ><img src="../Assets/Icons/patientReg.png" alt="" class="img-fluid pe-1"> <span class="fw-bold pt-1">Patient Register</span></a
+                            ><img src="../Assets/Icons/patientReg.png" alt="" class="img-fluid pe-1"> <span class="fw-bold pt-1">Register As Patient</span></a
                           >
                         </div>
                       </div>
