@@ -37,11 +37,13 @@ if (isset($_POST['loginEmail']) && isset($_POST['loginPassword'])) {
 			
 	
 			if (mysqli_num_rows($result) == 1) {
-				// $row = mysqli_fetch_assoc($result);
+				$row = mysqli_fetch_assoc($result);
 				// if ($row['email'] === $email && $row['Password'] === $pass) {
 					// $_SESSION['user_name'] = $row['user_name'];
 					// $_SESSION['name'] = $row['name'];
 					// $_SESSION['id'] = $row['id'];
+					$_SESSION['id'] = $row["Id"];
+					$_SESSION['name'] = $row["name"];
 					header("Location: doctorHome.php");
 					exit();
 				// }else{

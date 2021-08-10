@@ -1,3 +1,8 @@
+<?php  
+session_start();
+include "doctorDatabase.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +22,80 @@
     <link rel="stylesheet" href="../CSS/style.css" />
 </head>
 <body>
-    <h1>Doctor Welcome</h1>
+<header>
+      <!-- nav-bar add. -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a
+            class="navbar-brand d-flex align-items-center fw-bold fs-3"
+            href="patientHome.php"
+          >
+            <img
+              src="../Assets/Images/doctor.svg"
+              alt=""
+              width="40"
+              height="40"
+              class="d-inline-block align-text-top me-2"
+            />
+            <span style="color: #ea5044">Medi</span
+            ><span style="color: #555657">Cloud</span>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item mx-2 fs-5">
+                <a
+                  class="nav-link active navbar-shortcutlink current-page"
+                  aria-current="page"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item mx-2 fs-5">
+                <a
+                  class="nav-link active navbar-shortcutlink"
+                  aria-current="page"
+                  href="doctorAppointment.php"
+                  >Appointment</a
+                >
+              </li>
+              <li class="nav-item mx-2 fs-5">
+                <a
+                  class="nav-link active navbar-shortcutlink"
+                  aria-current="page"
+                  href="doctorProfile.php"
+                  >Profile</a
+                >
+              </li>
+              <li class="nav-item mx-2 fs-5">
+                <a
+                  class="nav-link active navbar-shortcutlink"
+                  aria-current="page"
+                  href="logout.php"
+                  >Logout</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+<section class="container pt-3">
+  <?php
+    echo "<h1 class='text-center welcome-msg'> <span style='color:#555657'>Welcome</span> {$_SESSION['name']} </h1>" ;
+    echo '<br>';
+  ?>
+</section>
 
 
 
