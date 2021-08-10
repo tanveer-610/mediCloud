@@ -1,107 +1,123 @@
-:root{
-    --primary-color:#EA493C;
+:root {
+  --primary-color: #ea493c;
 }
-.custom-color{
- color: var(--primary-color);
+.custom-color {
+  color: var(--primary-color);
 }
-.custom-form-background{
-    background-color: #DEE1E8;
+.custom-form-background {
+  background-color: whitesmoke;
 }
-
+/* index page css */
+.error {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0.3rem;
+  color: #eb5045;
+  background-color: #f0938c91;
+}
 /*Front page css */
-.banner{
-    height: 88vh;
- }
-.moto{
-    font-size: 50px;
-    font-weight: 900;
-} 
-
-.btn-style{
-    background-image: linear-gradient(#6064a1, #494E9A);
-    transition: 0.5s;
+.banner {
+  height: 88vh;
 }
-.btn-style:hover{
-    transform: scale(1.1);
-    box-shadow: 2px 2px 5px 5px  rgba(128, 128, 128,0.3);
-}
-.btn-style:hover .login-icon{
-    animation: shakeX;
-    animation-duration: 3s; 
-    animation-iteration-count: infinite;
+.moto {
+  font-size: 50px;
+  font-weight: 900;
 }
 
+.btn-style {
+  background-image: linear-gradient(#6064a1, #494e9a);
+  transition: 0.5s;
+}
+.btn-style:hover {
+  transform: scale(1.1);
+  box-shadow: 2px 2px 5px 5px rgba(128, 128, 128, 0.3);
+}
+.btn-style:hover .login-icon {
+  animation: shakeX;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
 
-.btn-submit-style{
-    background-color: #0D826E;
-    transition: 0.5s;
+.btn-submit-style {
+  background-color: #0d826e;
+  transition: 0.5s;
 }
-.btn-submit-style:hover{
-    transform: scale(1.1);  
+.btn-submit-style:hover {
+  transform: scale(1.1);
 }
-.btn-submit-style i{
-    transition: 0.5s;
+.btn-submit-style i {
+  transition: 0.5s;
 }
-.btn-submit-style:hover i{
-    font-size: 1.2rem;
-    animation: pulse;
-    animation-duration: 0.5s; 
-    animation-iteration-count: infinite;
+.btn-submit-style:hover i {
+  font-size: 1.2rem;
+  animation: pulse;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
 }
-.btn-role-style{
-    background-color: rgb(76, 11, 167);
+.btn-role-style {
+  background-color: rgb(76, 11, 167);
 }
 
 /* patient landing page.. */
-.navbar-shortcutlink{
-    transition: 0.5s transform;
+.navbar-shortcutlink {
+  transition: 0.2s transform;
+  font-size: 1.1rem;
 }
-.navbar-shortcutlink:hover{
-    transform: scale(1.2);
+.navbar-shortcutlink:hover {
+  transform: scale(1.1);
 }
-.navbar-shortcutlink::after{
-    content: '';
-    width: 0;
-    height: 3px;
-    background: var(--primary-color);
-    display: block;
-    margin: auto;
-    transition: 0.5s;
+.navbar-shortcutlink::after {
+  content: "";
+  width: 0px;
+  height: 2px;
+  background: var(--primary-color);
+  display: block;
+  margin: auto;
+  transition: 0.5s;
 }
-.navbar-shortcutlink:hover::after{
-    width: 100%;  
+.navbar-shortcutlink:hover::after {
+  width: 100%;
 }
-.welcome-msg{
-    font-size: 50px;
-    color: var(--primary-color);
-    animation: zoomIn;
-    animation-duration: 3s; 
-    animation-iteration-count: infinite;
+.welcome-msg {
+  font-size: 50px;
+  color: var(--primary-color);
+  animation: zoomIn;
+  animation-duration: 3s;
+  /* animation-iteration-count: infinite; */
 }
-.custom-form-background-take-appoinment{
-    background-color: #6f7277;
+.custom-form-background-take-appoinment {
+  background-color: rgb(245, 245, 245);
 }
-.btn-close-style{
-    transition: 0.5s;
+.btn-close-style {
+  transition: 0.5s;
 }
-.btn-close-style:hover{
-    transform: scale(1.1);  
+.btn-close-style:hover {
+  transform: scale(1.1);
 }
-.btn-close-style i{
-    transition: 0.5s;
+.btn-close-style i {
+  transition: 0.5s;
 }
-.btn-close-style:hover i{
-    font-size: 1.2rem;
-    animation: pulse;
-    animation-duration: 0.5s; 
-    animation-iteration-count: infinite;
+.btn-close-style:hover i {
+  font-size: 1.2rem;
+  animation: pulse;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
 }
-@media screen and (max-width:768px) {
-    /*Front page media quiery */
-    .moto,.welcome-msg{
-        font-size: 35px;
-    } 
-    .banner{
-        height: 65vh;
-     }    
+.current-page::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: var(--primary-color);
+  display: block;
+  margin: auto;
+}
+@media screen and (max-width: 768px) {
+  /*Front page media quiery */
+  .moto,
+  .welcome-msg {
+    font-size: 35px;
+  }
+  .banner {
+    height: 65vh;
+  }
 }

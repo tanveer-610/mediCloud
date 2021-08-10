@@ -94,10 +94,10 @@
                               name="loginRadio"
                               type="radio"
                               class="form-check-input"
-                              id="exampleCheck1"
+                              id="exampleCheck2"
                               value="Doctor"
                             />
-                            <label class="form-check-label" for="exampleCheck1"
+                            <label class="form-check-label" for="exampleCheck2"
                               >Doctor</label
                             >
                           </div>
@@ -105,7 +105,7 @@
                              <?php if (isset($_GET['error'])) { ?>            
      		                    <p class="error"><?php echo $_GET['error']; echo '<script type="text/javascript">
                               var flag =1 ;
-                              </script>'; ?> </p>
+                              </script>'; ?> </p> <br>
                                   	<?php } ?> 
                           <button name="loginBtn" type="submit" class="btn btn-submit-style text-light" value="loginBtn">
                           <i class="far fa-check-circle me-1"></i>Submit

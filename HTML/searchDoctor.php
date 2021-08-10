@@ -35,10 +35,10 @@ $searchValue="all"
           <a class="nav-link active navbar-shortcutlink" aria-current="page" href="patientHome.php">Home</a>
         </li>
         <li class="nav-item mx-2 fs-5">
-          <a class="nav-link active navbar-shortcutlink" aria-current="page" href="#">Search Doctor</a>
+          <a class="nav-link active navbar-shortcutlink current-page" aria-current="page" href="#">Search Doctor</a>
         </li>
         <li class="nav-item mx-2 fs-5">
-          <a class="nav-link active navbar-shortcutlink" aria-current="page" href="patientAppointment.php">Apointment</a>
+          <a class="nav-link active navbar-shortcutlink" aria-current="page" href="patientAppointment.php">Appointment</a>
         </li>
         <li class="nav-item mx-2 fs-5">
           <a class="nav-link active navbar-shortcutlink" aria-current="page" href="logout.php">Logout</a>
@@ -56,7 +56,7 @@ $searchValue="all"
 <section class="container p-4">
     <form class="d-flex justify-content-end " action="" >
         
-        <input type="text" id="myInput" class="p-2 border-1" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+        <input type="text" id="myInput" class="p-2 border-1 me-2 rounded-1" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
         <div class="dropdown">
             <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="#">Heart</a></li>
@@ -64,7 +64,7 @@ $searchValue="all"
                 <li><a class="dropdown-item" href="#">Surgery</a></li>
             </ul>
         </div>
-        <select id="mySelect" onchange="myFilter()">
+        <select class="rounded-1" id="mySelect" onchange="myFilter()">
               <option value="All" selected>All</option>
               <option value="HEART">Heart</option>
               <option value="BONE">Bone</option>
@@ -77,7 +77,7 @@ $searchValue="all"
 <!-- -------------------------------------- table----------------------------------- -->
 <section class="container table-responsive">
 
-<table class="table table-striped" id="myTable">
+<table class="table table-striped text-center" id="myTable">
   <thead class="table-dark">
     <tr>
       <th scope="col">ID</th>
@@ -95,7 +95,7 @@ $searchValue="all"
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result) > 0){
             while($row = $result->fetch_assoc()){
-                echo "<tr id='{$i}'> <td class='row-data'> {$row["id"]} </td> <td class='row-data'> {$row["name"]} </td> <td> {$row["specialist"]} </td> <td class='row-data'> {$row["chember"]} </td> <td> <button type='button' class='btn btn-outline-success fw-bolder px-3' data-bs-toggle='modal' data-bs-target='#exampleModal' onClick='myBooking()'>Take Appoinment</button>  </td></tr>";
+                echo "<tr id='{$i}'> <td class='row-data'> {$row["id"]} </td> <td class='row-data'> {$row["name"]} </td> <td> {$row["specialist"]} </td> <td class='row-data'> {$row["chember"]} </td> <td> <button type='button' class='btn btn-outline-success fw-bolder px-3 py-1 rounded-1' data-bs-toggle='modal' data-bs-target='#exampleModal' onClick='myBooking()'>Take Appointment</button>  </td></tr>";
               $i++;
             }
         }
@@ -111,7 +111,7 @@ $searchValue="all"
 <form method="POST" action="patientAppointmentProcess.php">
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content custom-form-background-take-appoinment text-white">
+    <div class="modal-content custom-form-background-take-appoinment text-black">
       <div class="modal-header">
         <h5 class="modal-title fw-bold" id="exampleModalLabel">Take Appoinment</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

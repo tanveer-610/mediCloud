@@ -39,7 +39,7 @@ include "doctorDatabase.php";
           <a class="nav-link active navbar-shortcutlink" aria-current="page" href="searchDoctor.php">Search Doctor</a>
         </li>
         <li class="nav-item mx-2 fs-5">
-          <a class="nav-link active navbar-shortcutlink" aria-current="page" href="#">Apointment</a>
+          <a class="nav-link active navbar-shortcutlink current-page" aria-current="page" href="#">Appointment</a>
         </li>
         <li class="nav-item mx-2 fs-5">
           <a class="nav-link active navbar-shortcutlink" aria-current="page" href="logout.php">Logout</a>
@@ -54,11 +54,11 @@ include "doctorDatabase.php";
 
 <section class="container py-4 table-responsive">
 
-<table class="table table-striped" id="myTable">
+<table class="table table-striped text-center" id="myTable">
   <thead class="table-dark">
     <tr>
       <th scope="col">Appointment Id</th>
-      <th scope="col">Docotr Id</th>
+      <th scope="col">Doctor Id</th>
       <th scope="col">Doctor Name</th>
       <th scope="col">Location</th>
       <th scope="col">Date</th>
@@ -73,7 +73,7 @@ include "doctorDatabase.php";
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result) > 0){
             while($row = $result->fetch_assoc()){
-                echo "<tr id='{$i}'> <td class='row-data'> {$row["appointment_id"]} </td> <td class='row-data'> {$row["doctor_id"]} </td> <td> {$row["doctor_name"]} </td> <td class='row-data'> {$row["location"]} </td> <td> {$row["date"]}   </td> <td><button type='button' class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='cancleAppointment()' ><i class='far fa-times-circle me-1 animate__animated animate__tada animate__infinite'></i>Cancel</button>  </td> </tr>";
+                echo "<tr id='{$i}'> <td class='row-data'> {$row["appointment_id"]} </td> <td class='row-data'> {$row["doctor_id"]} </td> <td> {$row["doctor_name"]} </td> <td class='row-data'> {$row["location"]} </td> <td> {$row["date"]}   </td> <td><button type='button' class='btn btn-danger rounded-1' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='cancleAppointment()' ><i class='far fa-times-circle me-1 animate__animated animate__tada animate__infinite'></i>Cancel</button>  </td> </tr>";
               $i++;
             }
         }

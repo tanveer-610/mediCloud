@@ -34,13 +34,13 @@ include "doctorDatabase.php";
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item mx-2 fs-5">
-          <a class="nav-link active  navbar-shortcutlink" aria-current="page" href="#">Home</a>
+          <a class="nav-link active  navbar-shortcutlink current-page" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item mx-2 fs-5">
           <a class="nav-link active navbar-shortcutlink" aria-current="page" href="searchDoctor.php">Search Doctor</a>
         </li>
         <li class="nav-item mx-2 fs-5 ">
-          <a class="nav-link active navbar-shortcutlink" aria-current="page" href="patientAppointment.php">Apointment</a>
+          <a class="nav-link active navbar-shortcutlink" aria-current="page" href="patientAppointment.php">Appointment</a>
         </li>
         <li class="nav-item mx-2 fs-5 ">
           <a class="nav-link active navbar-shortcutlink" aria-current="page" href="logout.php">Logout</a>
@@ -51,7 +51,7 @@ include "doctorDatabase.php";
 </nav>
 <section class="container pt-3">
   <?php
-  echo "<h1 class='text-center welcome-msg'> <span style='color:#494E9A'>Welcome</span> {$_SESSION['name']} </h1>" ;
+  echo "<h1 class='text-center welcome-msg'> <span style='color:#555657'>Welcome</span> {$_SESSION['name']} </h1>" ;
    echo '<br>';
    $sql="SELECT MIN(date) FROM appointment WHERE patient_id ={$_SESSION['id']}";
   //   //echo $sql;
@@ -60,7 +60,7 @@ include "doctorDatabase.php";
     if (mysqli_num_rows($result) >= 1) {
       $row = mysqli_fetch_assoc($result);
       if(!empty($row['MIN(date)'])){
-        echo "<p class='text-center'>Your upcoming Appointment Date  
+        echo "<p class='text-center'>Your upcoming Appointment Date:  
         <b class='text-success'>{$row['MIN(date)']}</b>
         </p>";
       }
