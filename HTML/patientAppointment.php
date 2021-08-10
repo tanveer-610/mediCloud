@@ -32,20 +32,18 @@ include "doctorDatabase.php";
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item mx-2 fs-5">
-          <a class="nav-link active navbar-shortcutlink" aria-current="page" href="patientHome.php">Home</a>
-        </li>
-        <li class="nav-item mx-2 fs-5">
-          <a class="nav-link active navbar-shortcutlink" aria-current="page" href="searchDoctor.php">Search Doctor</a>
-        </li>
-        <li class="nav-item mx-2 fs-5">
-          <a class="nav-link active navbar-shortcutlink current-page" aria-current="page" href="#">Appointment</a>
-        </li>
-        <li class="nav-item mx-2 fs-5">
-          <a class="nav-link active navbar-shortcutlink" aria-current="page" href="logout.php">Logout</a>
-        </li>
-        
-        
+          <li class="nav-item mx-2 fs-5">
+            <a class="nav-link active navbar-shortcutlink" aria-current="page" href="patientHome.php">Home</a>
+          </li>
+          <li class="nav-item mx-2 fs-5">
+            <a class="nav-link active navbar-shortcutlink" aria-current="page" href="searchDoctor.php">Search Doctor</a>
+          </li>
+          <li class="nav-item mx-2 fs-5">
+            <a class="nav-link active navbar-shortcutlink current-page" aria-current="page" href="#">Appointment</a>
+          </li>
+          <li class="nav-item mx-2 fs-5">
+            <a class="nav-link active navbar-shortcutlink" aria-current="page" href="logout.php">Logout</a>
+          </li>
       </ul>
     </div>
   </div>
@@ -56,14 +54,14 @@ include "doctorDatabase.php";
 
 <table class="table table-striped text-center" id="myTable">
   <thead class="table-dark">
-    <tr>
-      <th scope="col">Appointment Id</th>
-      <th scope="col">Doctor Id</th>
-      <th scope="col">Doctor Name</th>
-      <th scope="col">Location</th>
-      <th scope="col">Date</th>
-      <th scope="col"> </th>
-    </tr>
+      <tr>
+        <th scope="col">Appointment Id</th>
+        <th scope="col">Doctor Id</th>
+        <th scope="col">Doctor Name</th>
+        <th scope="col">Location</th>
+        <th scope="col">Date</th>
+        <th scope="col"> </th>
+      </tr>
   </thead>
   <tbody>
     <?php
@@ -84,29 +82,29 @@ include "doctorDatabase.php";
 
 <!-- ------------------------- modal------------------------------------ -->
 <form method="POST" action="patientAppointmentCancle.php" class="text-light">
-<div class="modal fade text-secondary" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content custom-form-background-take-appoinment">
-      <div class="modal-header">
-        <h5 class="modal-title text-dark" id="exampleModalLabel">Are you sure you want to cancel this appointment?</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="model-body container mb-3">
-      <label for="disabledTextInput" class="form-label">Appointment Id</label>
-      <input type="text" name="patientAppointmentId"  readonly="readonly" id="appointmentId" class="form-control" value="001">
-     </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger text-light me-3 btn-close-style" data-bs-dismiss="modal"><i class="far fa-times-circle me-1"></i>Close</button>
-        <button type="submit" class="btn btn-submit-style text-light"><i class="far fa-check-circle me-1"></i>Confirm</button>
-      </div>
+    <div class="modal fade text-secondary" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content custom-form-background-take-appoinment">
+                  <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="exampleModalLabel">Are you sure you want to cancel this appointment?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="model-body container mb-3">
+                  <label for="disabledTextInput" class="form-label">Appointment Id</label>
+                  <input type="text" name="patientAppointmentId"  readonly="readonly" id="appointmentId" class="form-control" value="001">
+              </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger text-light me-3 btn-close-style" data-bs-dismiss="modal"><i class="far fa-times-circle me-1"></i>Close</button>
+                    <button type="submit" class="btn btn-submit-style text-light"><i class="far fa-check-circle me-1"></i>Confirm</button>
+                  </div>
+              </div>
+          </div>
     </div>
-  </div>
-</div>
 </form>
 
 
 </section>
-
+<!-- -----------------------------JS Bundle CDN--------------------------- -->
 <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"

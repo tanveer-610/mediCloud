@@ -77,83 +77,81 @@ $searchValue="all"
 <!-- -------------------------------------- table----------------------------------- -->
 <section class="container table-responsive">
 
-<table class="table table-striped text-center" id="myTable">
-  <thead class="table-dark">
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Specialist</th>
-      <th scope="col">Location</th>
-      <th scope="col">Appointment</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php
-    $i=0;
-    if($searchValue=="all"){
-        $sql = "Select id, name, specialist, chember from doctor";
-        $result = mysqli_query($conn, $sql);
-        if(mysqli_num_rows($result) > 0){
-            while($row = $result->fetch_assoc()){
-                echo "<tr id='{$i}'> <td class='row-data'> {$row["id"]} </td> <td class='row-data'> {$row["name"]} </td> <td> {$row["specialist"]} </td> <td class='row-data'> {$row["chember"]} </td> <td> <button type='button' class='btn btn-outline-success fw-bolder px-3 py-1 rounded-1' data-bs-toggle='modal' data-bs-target='#exampleModal' onClick='myBooking()'>Take Appointment</button>  </td></tr>";
-              $i++;
+      <table class="table table-striped text-center" id="myTable">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Specialist</th>
+              <th scope="col">Location</th>
+              <th scope="col">Appointment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            $i=0;
+            if($searchValue=="all"){
+                $sql = "Select id, name, specialist, chember from doctor";
+                $result = mysqli_query($conn, $sql);
+                if(mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()){
+                        echo "<tr id='{$i}'> <td class='row-data'> {$row["id"]} </td> <td class='row-data'> {$row["name"]} </td> <td> {$row["specialist"]} </td> <td class='row-data'> {$row["chember"]} </td> <td> <button type='button' class='btn btn-outline-success fw-bolder px-3 py-1 rounded-1' data-bs-toggle='modal' data-bs-target='#exampleModal' onClick='myBooking()'>Take Appointment</button>  </td></tr>";
+                      $i++;
+                    }
+                }
+
             }
-        }
 
-    }
-
-    ?>
-  </tbody>
-</table>
+            ?>
+          </tbody>
+      </table>
 
 
 <!-- Modal -->
 <form method="POST" action="patientAppointmentProcess.php">
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content custom-form-background-take-appoinment text-black">
-      <div class="modal-header">
-        <h5 class="modal-title fw-bold" id="exampleModalLabel">Take Appointment</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content custom-form-background-take-appoinment text-black">
+                 <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="exampleModalLabel">Take Appointment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                 </div>
+                 <div class="modal-body">
+            
+                    <div class="mb-3">
+                      <label for="disabledTextInput" class="form-label">Doctor Id</label>
+                      <input type="text" name="patientAppointmentDoctorId"  readonly="readonly" id="appointmentModalDoctorId" class="form-control" value="001">
+                    </div>
+                    <div class="mb-3">
+                      <label for="disabledTextInput" class="form-label">Doctor Name</label>
+                      <input type="text" name="patientAppointmentDoctorName"  readonly="readonly"  id="appointmentModalDoctorName" class="form-control" value="Jahidul">
+                    </div>
+                    <div class="mb-3">
+                      <label for="disabledTextInput" class="form-label">Location</label>
+                      <input type="text" name="patientAppointmentLocation"  readonly="readonly"  id="appointmentModalDoctorLocation" class="form-control" value="Dhanmondi">
+                    </div>
+           
+                    <div class="mb-3">
+                      <label
+                      for="exampleInputAppointmentDatePatient"
+                      class="form-label"
+                      >Date</label
+                        >
+                        <input
+                        name="patientAppointmentDate"
+                        type="date"
+                        class="form-control"
+                        id="exampleInputAppointDatePatient"
+                        aria-describedby="emailHelp"
+                        />
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger text-light me-3 btn-close-style" data-bs-dismiss="modal"><i class="far fa-times-circle me-1"></i>Close</button>
+                      <button type="submit" class="btn btn-submit-style text-light"><i class="far fa-check-circle me-1"></i>Confirm</button>
+                    </div>
+              </div>
+          </div>
       </div>
-      <div class="modal-body">
-      <!-- <fieldset disabled> -->
-      <div class="mb-3">
-      <label for="disabledTextInput" class="form-label">Doctor Id</label>
-      <input type="text" name="patientAppointmentDoctorId"  readonly="readonly" id="appointmentModalDoctorId" class="form-control" value="001">
-     </div>
-     <div class="mb-3">
-      <label for="disabledTextInput" class="form-label">Doctor Name</label>
-      <input type="text" name="patientAppointmentDoctorName"  readonly="readonly"  id="appointmentModalDoctorName" class="form-control" value="Jahidul">
-     </div>
-     <div class="mb-3">
-      <label for="disabledTextInput" class="form-label">Location</label>
-      <input type="text" name="patientAppointmentLocation"  readonly="readonly"  id="appointmentModalDoctorLocation" class="form-control" value="Dhanmondi">
-     </div>
-    <!-- </fieldset> -->
-    <div class="mb-3">
-        <label
-         for="exampleInputAppointmentDatePatient"
-         class="form-label"
-         >Date</label
-          >
-          <input
-          name="patientAppointmentDate"
-          type="date"
-          class="form-control"
-          id="exampleInputAppointDatePatient"
-          aria-describedby="emailHelp"
-          />
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger text-light me-3 btn-close-style" data-bs-dismiss="modal"><i class="far fa-times-circle me-1"></i>Close</button>
-        <button type="submit" class="btn btn-submit-style text-light"><i class="far fa-check-circle me-1"></i>Confirm</button>
-      </div>
-    </div>
-  </div>
-</div>
 </form>
 
 </section>

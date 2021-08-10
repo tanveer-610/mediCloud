@@ -69,12 +69,7 @@ if (isset($_POST['patientName']) && isset($_POST['patientEmail'])){
             }
 
         }
-
-
-
     }
-	
-
 }else{
     header("Location: index.php");
 	exit();
