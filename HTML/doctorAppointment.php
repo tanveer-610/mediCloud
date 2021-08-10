@@ -33,16 +33,13 @@ include "doctorDatabase.php";
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item mx-2 fs-5">
-            <a class="nav-link active navbar-shortcutlink" aria-current="page" href="patientHome.php">Home</a>
-          </li>
-          <li class="nav-item mx-2 fs-5">
-            <a class="nav-link active navbar-shortcutlink" aria-current="page" href="searchDoctor.php">Search Doctor</a>
+            <a class="nav-link active navbar-shortcutlink" aria-current="page" href="doctorHome.php">Home</a>
           </li>
           <li class="nav-item mx-2 fs-5">
             <a class="nav-link active navbar-shortcutlink current-page" aria-current="page" href="#">Appointment</a>
           </li>
           <li class="nav-item mx-2 fs-5">
-            <a class="nav-link active navbar-shortcutlink" aria-current="page" href="patientProfile.php">Profile</a>
+            <a class="nav-link active navbar-shortcutlink" aria-current="page" href="doctorProfile.php">Profile</a>
           </li>
           <li class="nav-item mx-2 fs-5">
             <a class="nav-link active navbar-shortcutlink" aria-current="page" href="logout.php">Logout</a>
@@ -59,9 +56,7 @@ include "doctorDatabase.php";
   <thead class="table-dark">
       <tr>
         <th scope="col">Appointment Id</th>
-        <th scope="col">Doctor Id</th>
-        <th scope="col">Doctor Name</th>
-        <th scope="col">Location</th>
+        <th scope="col">Patient Name</th>
         <th scope="col">Date</th>
         <th scope="col"> </th>
       </tr>
@@ -70,11 +65,11 @@ include "doctorDatabase.php";
     <?php
      $i=0;
         $session_id = $_SESSION['id'];
-        $sql = "Select 	appointment_id , doctor_id, doctor_name, location, date from appointment where patient_id = '$session_id' ORDER BY date";
+        $sql = "Select 	appointment_id , patient_name, date from appointment where doctor_id = '$session_id' ORDER BY date";
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result) > 0){
             while($row = $result->fetch_assoc()){
-                echo "<tr id='{$i}'> <td class='row-data'> {$row["appointment_id"]} </td> <td class='row-data'> {$row["doctor_id"]} </td> <td> {$row["doctor_name"]} </td> <td class='row-data'> {$row["location"]} </td> <td> {$row["date"]}   </td> <td><button type='button' class='btn btn-danger rounded-1 cancel-btn' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='cancleAppointment()' ><i class='far fa-times-circle me-1'></i>Cancel</button>  </td> </tr>";
+                echo "<tr id='{$i}'> <td class='row-data'> {$row["appointment_id"]} </td> <td> {$row["patient_name"]} </td> <td> {$row["date"]}   </td> <td><button type='button' class='btn btn-danger rounded-1 cancel-btn' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='cancleAppointment()' ><i class='far fa-times-circle me-1'></i>Cancel</button>  </td> </tr>";
               $i++;
             }
         }
@@ -84,7 +79,7 @@ include "doctorDatabase.php";
 </table>
 
 <!-- ------------------------- modal------------------------------------ -->
-<form method="POST" action="patientAppointmentCancle.php" class="text-light">
+<form method="POST" action="doctorAppointmentCancle.php" class="text-light">
     <div class="modal fade text-secondary" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
               <div class="modal-content custom-form-background-take-appoinment">
@@ -94,11 +89,11 @@ include "doctorDatabase.php";
                   </div>
                   <div class="model-body container mb-3">
                   <label for="disabledTextInput" class="form-label">Appointment Id</label>
-                  <input type="text" name="patientAppointmentId"  readonly="readonly" id="appointmentId" class="form-control" value="001">
+                  <input type="text" name="doctorAppointmentId"  readonly="readonly" id="appointmentId" class="form-control" value="001">
               </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-danger text-light me-3 btn-close-style" data-bs-dismiss="modal"><i class="far fa-times-circle me-1"></i>Close</button>
-                    <button type="submit" class="btn btn-submit-style text-light"><i class="far fa-check-circle me-1"></i>Confirm</button>
+                    <button  type="submit" class="btn btn-submit-style text-light"><i class="far fa-check-circle me-1"></i>confirm</button>
                   </div>
               </div>
           </div>
