@@ -448,11 +448,11 @@
                 </div>
                 <a
                   id="registrationBtn"
-                  class="nav-link btn btn-style text-light"
+                  class="nav-link btn btn-style text-light "
                   data-bs-toggle="modal"
                   href="#exampleModalToggle2"
                   role="button"
-                  ><i class="fas fa-user-plus me-2 animate__animated animate__tada animate__infinite"></i>Registration</a
+                  ><i class="fas fa-user-plus me-2 register-icon"></i>Registration</a
                 >
               </li>
             </ul>

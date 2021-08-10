@@ -43,6 +43,9 @@ include "doctorDatabase.php";
                         <a class="nav-link active navbar-shortcutlink" aria-current="page" href="patientAppointment.php">Appointment</a>
                       </li>
                       <li class="nav-item mx-2 fs-5 ">
+                        <a class="nav-link active navbar-shortcutlink" aria-current="page" href="patientProfile.php">Profile</a>
+                      </li>
+                      <li class="nav-item mx-2 fs-5 ">
                         <a class="nav-link active navbar-shortcutlink" aria-current="page" href="logout.php">Logout</a>
                       </li>           
                   </ul>

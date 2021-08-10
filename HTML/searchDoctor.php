@@ -41,6 +41,9 @@ $searchValue="all"
           <a class="nav-link active navbar-shortcutlink" aria-current="page" href="patientAppointment.php">Appointment</a>
         </li>
         <li class="nav-item mx-2 fs-5">
+            <a class="nav-link active navbar-shortcutlink" aria-current="page" href="patientProfile.php">Profile</a>
+          </li>
+        <li class="nav-item mx-2 fs-5">
           <a class="nav-link active navbar-shortcutlink" aria-current="page" href="logout.php">Logout</a>
         </li>
         
@@ -113,7 +116,7 @@ $searchValue="all"
           <div class="modal-dialog">
               <div class="modal-content custom-form-background-take-appoinment text-black">
                  <div class="modal-header">
-                    <h5 class="modal-title fw-bold" id="exampleModalLabel">Take Appointment</h5>
+                    <h5 class="modal-title custom-color" id="exampleModalLabel">Take Appointment</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                  </div>
                  <div class="modal-body">
