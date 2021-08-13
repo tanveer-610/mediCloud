@@ -6,9 +6,10 @@
   color: var(--secondary-color);
 }
 .custom-form-background {
-  background-color: whitesmoke;
+  background-color: rgb(245, 245, 245);
 }
-/* index page css */
+
+/* ------------------------------------------------------index page css------------------------------------------------- */
 .error {
   display: inline-block;
   border-radius: 3px;
@@ -16,7 +17,7 @@
   color: #eb5045;
   background-color: #f0938c91;
 }
-/*Front page css */
+/*--------------------------------------------------------------Front page css----------------------------------------------- */
 .banner {
   height: 88vh;
 }
@@ -64,7 +65,7 @@
   background-color: rgb(76, 11, 167);
 }
 
-/* patient landing page.. */
+/*---------------------------------------------------- patient landing page-------------------------------------- */
 .navbar-shortcutlink {
   transition: 0.2s transform;
   font-size: 1.1rem;
@@ -90,11 +91,8 @@
   color: var(--primary-color);
   animation: zoomIn;
   animation-duration: 3s;
-  /* animation-iteration-count: infinite; */
 }
-.custom-form-background-take-appoinment {
-  background-color: rgb(245, 245, 245);
-}
+
 
 .btn-close-style {
   transition: 0.5s;
@@ -120,14 +118,14 @@
   margin: auto;
 }
 
-/* Patient appoinment page.. */
+/*---------------------------------------------------------- Patient appoinment page---------------------------------------.. */
 .cancel-btn:hover i{
   animation: tada;
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
 @media screen and (max-width: 768px) {
-  /*Front page media quiery */
+  /*---------------------------------------Front page media quiery----------------------------------- */
   .moto,
   .welcome-msg {
     font-size: 35px;
