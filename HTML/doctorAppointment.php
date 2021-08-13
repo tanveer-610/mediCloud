@@ -56,6 +56,7 @@ include "doctorDatabase.php";
   <thead class="table-dark">
       <tr>
         <th scope="col">Appointment Id</th>
+        <th scope="col">Patient Id</th>
         <th scope="col">Patient Name</th>
         <th scope="col">Date</th>
         <th scope="col"> </th>
@@ -66,12 +67,12 @@ include "doctorDatabase.php";
     <?php
      $i=0;
         $session_id = $_SESSION['id'];
-        $sql = "Select 	appointment_id , patient_name, date from appointment where doctor_id = '$session_id' ORDER BY date";
+        $sql = "Select 	appointment_id , patient_name, patient_id, date from appointment where doctor_id = '$session_id' ORDER BY date";
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result) > 0){
             while($row = $result->fetch_assoc()){
-                echo "<tr id='{$i}'> <td class='row-data'> {$row["appointment_id"]} </td> <td> {$row["patient_name"]} </td> <td> {$row["date"]} </td>  </td> <td><button type='button' class='btn btn-success rounded-1 view-btn ' data-bs-toggle='modal' data-bs-target='#exampleModal2' onclick='' ><i class='fas fa-address-card me-1'></i>View</button>  <button type='button' class='btn btn-danger rounded-1 cancel-btn' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='cancleAppointment()' ><i class='far fa-times-circle me-1'></i>Cancel</button>  </td>  </tr>";
-              $i++;
+                echo "<tr id='{$i}'> <td class='row-data'> {$row["appointment_id"]} </td> <td class='row-data'> {$row["patient_id"]} </td><td class='row-data'> {$row["patient_name"]} </td> <td> {$row["date"]} </td>  </td> <td><button type='button' class='btn btn-success rounded-1 view-btn ' data-bs-toggle='modal' data-bs-target='#exampleModal2' onclick='viewPatientDetails()'> <i class='fas fa-address-card me-1'></i>View</button>  <button type='button' class='btn btn-danger rounded-1 cancel-btn' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='cancleAppointment()' ><i class='far fa-times-circle me-1'></i>Cancel</button>  </td>  </tr>";  
+                $i++;
             }
         }
     
@@ -102,26 +103,28 @@ include "doctorDatabase.php";
 </form>
 
 <!-- ----------------------- modal patient view ------------------------------ -->
-<form method="POST" action="" class="text-light">
+<form method="POST" action="doctorPrescriptionSave.php" class="text-light">
     <div class="modal fade text-secondary" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
               <div class="modal-content custom-form-background-take-appoinment">
                   <div class="modal-header">
-                    <h5 class="modal-title text-dark" id="exampleModalLabel">Patient Profile</h5>
+                    <h5 class="modal-title text-dark" id="exampleModalLabel" >Patient Profile</h5>
+                    
+                  
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="model-body container mb-3">
+                    <label for="disabledTextInput" class="form-label">Patient Id</label>
+                    <input type="text" name="doctorAppointmentId"  readonly="readonly" id="doctorAppointmentId" class="form-control" value="" hidden>
+                     <input type="text" name="doctorAppointmentViewPatientId"  readonly="readonly" id="doctorAppointmentViewPatientId" class="form-control" value="">
                      <label for="disabledTextInput" class="form-label">Patient Name</label>
-                     <input type="text" name="doctorAppointmentViewPatientName"  readonly="readonly" id="doctorAppointmentViewPatientName" class="form-control" value="Jahid Islam">
-                     <label for="disabledTextInput" class="form-label">Patient Age</label>
-                     <input type="text" name="doctorAppointmentViewPatientAge"  readonly="readonly" id="doctorAppointmentViewPatientAge" class="form-control" value="21">
-                     <label for="disabledTextInput" class="form-label">Patient Number</label>
-                     <input type="text" name="doctorAppointmentViewPatientNumber"  readonly="readonly" id="doctorAppointmentViewPatientNumber" class="form-control" value="017121548">
+                     <input type="text" name="doctorAppointmentViewPatientName"  readonly="readonly" id="doctorAppointmentViewPatientName" class="form-control" value="">
+            
                   </div>
                   <div class="model-body container mb3">
      
                   <label for="TextInput" class="form-label">Patient Piscription</label>
-                   <textarea class="form-control" aria-label="With textarea" rows="10" value="">Rx,</textarea>
+                   <textarea name="prescription" class="form-control" aria-label="With textarea" rows="10" value="">Rx,</textarea>
                   </div>
 
                   
@@ -141,23 +144,25 @@ include "doctorDatabase.php";
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
       crossorigin="anonymous">
-  </script>
+</script>
+
 <script>
+  function viewPatientDetails(){
 
-function cancleAppointment(){
   var rowId =event.target.parentNode.parentNode.id;
-
-              //this gives id of tr whose button was clicked
+  console.log("here");
+              
   var data = document.getElementById(rowId).querySelectorAll(".row-data"); 
-              /*returns array of all elements with 
-              "row-data" class within the row with given id*/
-   var id = data[0].innerHTML;
-   document.getElementById("appointmentId").value = id;
-
+  var appointment_id = data[0].innerHTML;
+  var patientId = data[1].innerHTML;
+  var patientName = data[2].innerHTML;
+  console.log(appointment_id);
+  document.getElementById("doctorAppointmentId").value = appointment_id;
+  document.getElementById("doctorAppointmentViewPatientName").value = patientName;
+   document.getElementById("doctorAppointmentViewPatientId").value = patientId;
 }
 
 </script>
-
 
 </body>
 </html>
