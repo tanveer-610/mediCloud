@@ -1,21 +1,21 @@
 <?php
 session_start();
 include "doctorDatabase.php";
-$sql ="SELECT * FROM patient WHERE id={$_SESSION['id']};";
+$sql ="SELECT * FROM doctor WHERE id={$_SESSION['id']};";
 $result = mysqli_query($conn, $sql);
 if(mysqli_num_rows($result) > 0){
   $row = $result->fetch_assoc();
   $email =$row["email"];
-  $age =$row["Age"];
+  $specialist = $row["specialist"];
+  $chamber =$row["chember"];
   $phone =$row["number"];
-  $address =$row["address"];
   $password = $row["Password"];
 }else{
   $email = "";
-  $age ="";
+  $chamber ="";
   $phone = "";
-  $address ="";
   $password="";
+  $specialist="";
 }
 ?>
 
@@ -173,7 +173,7 @@ if(mysqli_num_rows($result) > 0){
                         ></button>
                       </div>
                       <div class="modal-body">
-                        <form method="POST" action="patientProfileUpdate.php">
+                        <form method="POST" action="doctorProfileUpdate.php">
                            <!-- -----------------------------------error msg here --------------------------------- -->
                            <?php if (isset($_GET['error'])) { ?>            
      		                    <p class="error"><?php echo $_GET['error']; echo '<script type="text/javascript">
@@ -182,15 +182,15 @@ if(mysqli_num_rows($result) > 0){
                                   	<?php } ?> 
                           <div class="mb-3">
                             <label
-                              for="exampleInputNamePatient"
+                              for="exampleInputNameDoctor"
                               class="form-label"
                               >Name</label
                             >
                             <input
-                              name="patientName"
+                              name="doctorName"
                               type="text"
                               class="form-control"
-                              id="exampleInputNamePatient"
+                              id="exampleInputNameDoctor"
                               placeholder="Write your name here..."
                               value="<?php echo"{$_SESSION['name']}";?>"
                             />
@@ -198,15 +198,15 @@ if(mysqli_num_rows($result) > 0){
 
                           <div class="mb-3">
                             <label
-                              for="exampleInputEmailPatient"
+                              for="exampleInputEmailDoctor"
                               class="form-label"
                               >Email address</label
                             >
                             <input
-                              name="patientEmail"
+                              name="doctorEmail"
                               type="email"
                               class="form-control"
-                              id="exampleInputEmailPatient"
+                              id="exampleInputEmailDoctor"
                               aria-describedby="emailHelp"
                               placeholder="Write your email here..."
                               readonly="readonly"
@@ -218,30 +218,30 @@ if(mysqli_num_rows($result) > 0){
                           </div>
                           <div class="mb-3">
                             <label
-                              for="exampleInputAgePatient"
+                              for="exampleInputSpecialistDoctor"
                               class="form-label"
-                              >Age</label
+                              >specialist</label
                             >
                             <input
-                              name="patientAge"
-                              type="number"
+                              name="doctorSpecialist"
+                              type="text"
                               class="form-control"
-                              id="exampleInputAgePatient"
-                              placeholder="Write your age here..."
-                              value="<?php echo"{$age}"; ?>"
+                              id="exampleInputSpecialistDoctor"
+                              placeholder="Write your bla bla..."
+                              value="<?php echo"{$specialist}"; ?>"
                             />
                           </div>
                           <div class="mb-3">
                             <label
-                              for="exampleInputNumberPatient"
+                              for="exampleInputNumberDoctor"
                               class="form-label"
                               >Phone Number</label
                             >
                             <input
-                              name="patientNumber"
+                              name="doctorNumber"
                               type="number"
                               class="form-control"
-                              id="exampleInputNumberPatient"
+                              id="exampleInputNumberDoctor"
                               placeholder="Write your phone number here..."
                               value="<?php echo"{$phone}";?>"
                             />
@@ -249,46 +249,46 @@ if(mysqli_num_rows($result) > 0){
 
                           <div class="mb-3">
                             <label
-                              for="exampleInputAddressPatient"
+                              for="exampleInputAddressDoctor"
                               class="form-label"
-                              >Address</label
+                              >Chamber&Time</label
                             >
                             <input
-                              name="patientAddress"
+                              name="doctorAddress"
                               type="text"
                               class="form-control"
-                              id="exampleInputAddressPatient"
-                              placeholder="Write your full address..."
-                              value="<?php echo"{$address}";?>"
+                              id="exampleInputAddressDoctor"
+                              placeholder="Write your Chamber address&Time..."
+                              value="<?php echo"{$chamber}";?>"
                             />
                           </div>
 
                           <div class="mb-3">
                             <label
-                              for="exampleInputPasswordPatient"
+                              for="exampleInputPasswordDoctor"
                               class="form-label"
                               >Password</label
                             >
                             <input
-                              name="patientPassword"
+                              name="doctorPassword"
                               type="password"
                               class="form-control"
-                              id="exampleInputPasswordPatient"
+                              id="exampleInputPasswordDoctor"
                               value="<?php echo "{$password}"?>"
                               
                             />
                           </div>
                           <div class="mb-3">
                             <label
-                              for="exampleInputPasswordConfirmPatient"
+                              for="exampleInputPasswordConfirmDoctor"
                               class="form-label"
                               >Confirm Password</label
                             >
                             <input
-                              name="patientConfirmPassword"
+                              name="doctorConfirmPassword"
                               type="password"
                               class="form-control"
-                              id="exampleInputPasswordConfirmPatient"
+                              id="exampleInputPasswordConfirmDoctor"
                               placeholder="*******"
                             />
                           </div>
@@ -311,9 +311,9 @@ if(mysqli_num_rows($result) > 0){
                 <div class="card-text lh-lg fs-4">
                   <label for="patient-profile-name">Name: <?php echo"{$_SESSION['name']}" ?> </label><br />
                   <label for="patient-profile-email">Email: <?php echo"{$email}" ?></label><br />
-                  <label for="patient-profile-age">Age: <?php echo"{$age}" ?></label><br />
+                  <label for="patient-profile-age">Special in: <?php echo"{$specialist}" ?></label><br />
                   <label for="patient-profile-phone">Phone: <?php echo"{$phone}" ?></label><br />
-                  <label for="patient-profile-phone">Address: <?php echo"{$address}" ?></label>
+                  <label for="patient-profile-phone">Chamber: <?php echo"{$chamber}" ?></label>
                 </div>
               </div>
             </div>
