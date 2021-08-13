@@ -59,6 +59,7 @@ include "doctorDatabase.php";
         <th scope="col">Patient Name</th>
         <th scope="col">Date</th>
         <th scope="col"> </th>
+        <!-- <th scope="col"> </th> -->
       </tr>
   </thead>
   <tbody>
@@ -69,7 +70,7 @@ include "doctorDatabase.php";
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result) > 0){
             while($row = $result->fetch_assoc()){
-                echo "<tr id='{$i}'> <td class='row-data'> {$row["appointment_id"]} </td> <td> {$row["patient_name"]} </td> <td> {$row["date"]}   </td> <td><button type='button' class='btn btn-danger rounded-1 cancel-btn' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='cancleAppointment()' ><i class='far fa-times-circle me-1'></i>Cancel</button>  </td> </tr>";
+                echo "<tr id='{$i}'> <td class='row-data'> {$row["appointment_id"]} </td> <td> {$row["patient_name"]} </td> <td> {$row["date"]} </td>  </td> <td><button type='button' class='btn btn-success rounded-1 view-btn ' data-bs-toggle='modal' data-bs-target='#exampleModal2' onclick='' ><i class='fas fa-address-card me-1'></i>View</button>  <button type='button' class='btn btn-danger rounded-1 cancel-btn' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='cancleAppointment()' ><i class='far fa-times-circle me-1'></i>Cancel</button>  </td>  </tr>";
               $i++;
             }
         }
@@ -78,7 +79,7 @@ include "doctorDatabase.php";
   </tbody>
 </table>
 
-<!-- ------------------------- modal------------------------------------ -->
+<!-- ------------------------- modal cancle------------------------------------ -->
 <form method="POST" action="doctorAppointmentCancle.php" class="text-light">
     <div class="modal fade text-secondary" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -91,6 +92,39 @@ include "doctorDatabase.php";
                   <label for="disabledTextInput" class="form-label">Appointment Id</label>
                   <input type="text" name="doctorAppointmentId"  readonly="readonly" id="appointmentId" class="form-control" value="001">
               </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger text-light me-3 btn-close-style" data-bs-dismiss="modal"><i class="far fa-times-circle me-1"></i>Close</button>
+                    <button  type="submit" class="btn btn-submit-style text-light"><i class="far fa-check-circle me-1"></i>confirm</button>
+                  </div>
+              </div>
+          </div>
+    </div>
+</form>
+
+<!-- ----------------------- modal patient view ------------------------------ -->
+<form method="POST" action="" class="text-light">
+    <div class="modal fade text-secondary" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content custom-form-background-take-appoinment">
+                  <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="exampleModalLabel">Patient Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="model-body container mb-3">
+                     <label for="disabledTextInput" class="form-label">Patient Name</label>
+                     <input type="text" name="doctorAppointmentViewPatientName"  readonly="readonly" id="doctorAppointmentViewPatientName" class="form-control" value="Jahid Islam">
+                     <label for="disabledTextInput" class="form-label">Patient Age</label>
+                     <input type="text" name="doctorAppointmentViewPatientAge"  readonly="readonly" id="doctorAppointmentViewPatientAge" class="form-control" value="21">
+                     <label for="disabledTextInput" class="form-label">Patient Number</label>
+                     <input type="text" name="doctorAppointmentViewPatientNumber"  readonly="readonly" id="doctorAppointmentViewPatientNumber" class="form-control" value="017121548">
+                  </div>
+                  <div class="model-body container mb3">
+     
+                  <label for="TextInput" class="form-label">Patient Piscription</label>
+                   <textarea class="form-control" aria-label="With textarea" rows="10" value="">Rx,</textarea>
+                  </div>
+
+                  
                   <div class="modal-footer">
                     <button type="button" class="btn btn-danger text-light me-3 btn-close-style" data-bs-dismiss="modal"><i class="far fa-times-circle me-1"></i>Close</button>
                     <button  type="submit" class="btn btn-submit-style text-light"><i class="far fa-check-circle me-1"></i>confirm</button>
