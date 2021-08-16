@@ -174,7 +174,13 @@
                                   ></button>
                                 </div>
                                 <div class="modal-body">
-                                  <form method="POST" action="">
+                                  <form method="POST" action="doctorRegistration.php">
+                                        <!-- -------------------------------- doctor regi error ---------------------------   ----------------------- -->
+                                     <?php if (isset($_GET['errord'])) { ?>            
+                                        <p class="error"><?php echo $_GET['errord']; echo '<script type="text/javascript">
+                                        var flag =3 ;
+                                        </script>'; ?> </p>
+                                  	<?php } ?>
                                     <div class="mb-3">
                                       <label
                                         for="exampleInputNameDoctor"
@@ -213,12 +219,54 @@
                                         >BMDC Regi. No</label
                                       >
                                       <input
-                                        name="BMDCname"
+                                        name="BMDCnumber"
+                                        type="number"
+                                        class="form-control"
+                                        id="exampleInputRegDoctor"
+                                      />
+                                    </div>
+                                    <div class="mb-3">
+                                      <label
+                                        for="exampleInputRegDoctor"
+                                        class="form-label"
+                                        >Specialist</label
+                                      >
+                                      <select name="specialist-list" class="form-control" id="exampleInputRegDoctor">
+                                      <option value="none">Select One</option>
+                                        <option value="heart">Heart</option>
+                                        <option value="Bone">Bone</option>
+                                        <option value="surgery">Surgery</option>
+                                        <option value="mental">Mental</option>
+                                      </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                      <label
+                                        for="exampleInputRegDoctor"
+                                        class="form-label"
+                                        >Chamber & Time Schedule</label
+                                      >
+                                      <input
+                                        name="doctorAddress"
                                         type="text"
                                         class="form-control"
                                         id="exampleInputRegDoctor"
                                       />
                                     </div>
+                                    <div class="mb-3">
+                                      <label
+                                        for="exampleInputRegDoctor"
+                                        class="form-label"
+                                        >Number</label
+                                      >
+                                      <input
+                                        name="doctorNumber"
+                                        type="tel"
+                                        class="form-control"
+                                        id="exampleInputRegDoctor"
+                                      />
+                                    </div>
+
                                     <div class="mb-3">
                                       <label
                                         for="exampleInputPasswordDoctor"
@@ -276,6 +324,7 @@
                             data-bs-toggle="modal"
                             href="#exampleModalToggleDoctor"
                             role="button"
+                            id="doctorRegistrationBtn"
                             ><img src="../Assets/Icons/doctorReg.png" alt="" class="img-fluid"><span class="pt-1">Register As Doctor</span></a
                           >
                         </div>
@@ -532,6 +581,12 @@
         var patient = document.getElementById("patientRegisterBtn");
         patient.click();
 
+      }
+      if(flag == 3){
+        var regi = document.getElementById("registrationBtn");
+        regi.click();
+        var patient = document.getElementById("doctorRegistrationBtn");
+        patient.click();
       }
     </script>
 

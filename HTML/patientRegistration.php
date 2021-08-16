@@ -75,5 +75,4 @@ if (isset($_POST['patientName']) && isset($_POST['patientEmail'])){
 	exit();
 }
 
-
 ?>
