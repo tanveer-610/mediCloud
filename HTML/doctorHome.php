@@ -1,7 +1,11 @@
 <?php  
 session_start();
 include "doctorDatabase.php";
-
+if(!isset($_SESSION['id'])){
+  header("location:index.php?warning=login first");
+  session_unset();
+  session_destroy();  
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

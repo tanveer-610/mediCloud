@@ -1,6 +1,11 @@
 <?php 
 include "doctorDatabase.php";
-$searchValue="all"
+$searchValue="all";
+if(!isset($_SESSION['id'])){
+  header("location:index.php?warning=login first");
+  session_unset();
+  session_destroy();  
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

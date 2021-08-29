@@ -558,6 +558,19 @@
           </div>
         </div>
       </section>
+      <!-- ----------------------------------- Tost message---------------------- -->
+      <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"  data-bs-delay="1000">
+            <div class="toast-body bg-danger text-light">
+                Login First
+            </div>
+        </div>
+    </div>
+    <?php   
+      if (isset($_GET['warning'])) {
+        echo '<script type="text/javascript"> var warn=1;  </script>';
+      }
+    ?>
     </header>
 
     <main></main>
@@ -588,6 +601,16 @@
         var patient = document.getElementById("doctorRegistrationBtn");
         patient.click();
       }
+
+    </script>
+    <script>
+        if(warn== 1){
+          var toastLiveExample = document.getElementById('liveToast');
+          var toast = new bootstrap.Toast(toastLiveExample);
+          toast.show();      
+          warn = 0;
+      }
+      
     </script>
 
   </body>

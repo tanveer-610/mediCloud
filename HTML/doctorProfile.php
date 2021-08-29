@@ -1,6 +1,11 @@
 <?php
 session_start();
 include "doctorDatabase.php";
+if(!isset($_SESSION['id'])){
+  header("location:index.php?warning=login first");
+  session_unset();
+  session_destroy();  
+}
 $sql ="SELECT * FROM doctor WHERE id={$_SESSION['id']};";
 $result = mysqli_query($conn, $sql);
 if(mysqli_num_rows($result) > 0){
