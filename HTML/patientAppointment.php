@@ -71,7 +71,7 @@ if(!isset($_SESSION['id'])){
           <th scope="col">Appointment Id</th>
           <th scope="col">Doctor Id</th>
           <th scope="col">Doctor Name</th>
-          <th scope="col">Location</th>
+          <th scope="col">Location & Time</th>
           <th scope="col">Date</th>
           <th scope="col"> </th>
         </tr>

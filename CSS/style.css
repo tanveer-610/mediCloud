@@ -141,6 +141,19 @@
     margin: auto;
 }
 
+.card-shadow{
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card-shadow:hover{
+    box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.5);
+}
+/* ---------------------------search doctor----------------------- */
+#myInput{
+    font-family: "Helvetica Neue",Helvetica,Arial, sans-serif, FontAwesome;
+}
 
 /*---------------------------------------------------------- Patient appoinment page---------------------------------------.. */
 

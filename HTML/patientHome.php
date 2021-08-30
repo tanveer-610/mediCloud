@@ -79,6 +79,39 @@ if(!isset($_SESSION['id'])){
       } 
   ?>
 </section>
+<!-- ---------------------card section ----------------- -->
+<section class="container mt-5">
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-100 card-shadow">
+      <img src="../Assets/Images/Patient Ui/x-ray.png" class="h-75 w-50 mx-auto my-3" alt="...">
+      <div class="card-body">
+        <h3 class="card-title text-center">Orthopedic</h3>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100 card-shadow">
+      <img src="../Assets/Images/Patient Ui/pills.png" class="h-75 w-50 mx-auto my-3" alt="...">
+      <div class="card-body">
+        <h3 class="card-title text-center">Medicine</h3>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100 card-shadow">
+      <img src="../Assets/Images/Patient Ui/medical-team.png" class="h-75 w-50 mx-auto my-3" alt="...">
+      <div class="card-body">
+        <h3 class="card-title text-center">Surgery</h3>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
 <!-- ----------------------------JS Bundle CDN-------------------------------  -->
 <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
