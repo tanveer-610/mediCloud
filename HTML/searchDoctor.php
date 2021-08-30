@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include "doctorDatabase.php";
 $searchValue="all";
 if(!isset($_SESSION['id'])){
@@ -66,8 +67,9 @@ if(!isset($_SESSION['id'])){
 </div>
 <section class="container p-4">
     <form class="d-flex justify-content-end ms-5" action="" >
-        
-        <input type="text" id="myInput" class="p-2 border-1 rounded-1 ms-5 me-2" onkeyup="myFunction()" placeholder="Search Doctor Name" title="Type in a name">
+       <div class="">
+        <input type="text" id="myInput" class="p-2 border-1 rounded-1 ms-5 me-2" onkeyup="myFunction()" placeholder="&#xf002; Search Doctor Name" title="Type in a name">
+      </div> 
         <div class="dropdown">
             <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="#">Heart</a></li>
@@ -94,7 +96,7 @@ if(!isset($_SESSION['id'])){
               <th scope="col">ID</th>
               <th scope="col">Name</th>
               <th scope="col">Specialist</th>
-              <th scope="col">Location</th>
+              <th scope="col">Location & Time</th>
               <th scope="col">Appointment</th>
             </tr>
           </thead>
@@ -138,7 +140,7 @@ if(!isset($_SESSION['id'])){
                       <input type="text" name="patientAppointmentDoctorName"  readonly="readonly"  id="appointmentModalDoctorName" class="form-control" value="Jahidul">
                     </div>
                     <div class="mb-3">
-                      <label for="disabledTextInput" class="form-label">Location</label>
+                      <label for="disabledTextInput" class="form-label">Location & Time</label>
                       <input type="text" name="patientAppointmentLocation"  readonly="readonly"  id="appointmentModalDoctorLocation" class="form-control" value="Dhanmondi">
                     </div>
            
@@ -152,7 +154,7 @@ if(!isset($_SESSION['id'])){
                         name="patientAppointmentDate"
                         type="date"
                         class="form-control"
-                        id="exampleInputAppointDatePatient"
+                        id="txtdate"
                         aria-describedby="emailHelp"
                         />
                     </div>

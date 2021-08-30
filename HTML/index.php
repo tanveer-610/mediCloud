@@ -515,7 +515,7 @@
           <div class="row g-lg-4 gy-3 align-items-center">
             <div class="col-lg-6 col-sm-12">
               <h1 class="moto">
-                <span style="color:#EA493C">Healthy People,</span><br/>
+                <span class="" style="color:#EA493C">Healthy People,</span><br/>
                 <span>Healthy Nation</span>
               </h1>
               <p class="text-muted mt-4"> <i>
