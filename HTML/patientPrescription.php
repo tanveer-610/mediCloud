@@ -80,7 +80,7 @@ if(!isset($_SESSION['id'])){
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result) > 0){
             while($row = $result->fetch_assoc()){
-                echo "<tr id='{$i}'> <td> {$row["id"]} </td> <td> {$row["doctor_name"]} </td> <td> {$row["date"]} </td><td class='row-data d-none'> {$row["text"]} </td> <td><button type='button' class='btn btn-success rounded-1 cancel-btn' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='showPrescription()' >View</button>  </td> </tr>";
+                echo "<tr id='{$i}'> <td> {$row["id"]} </td> <td> {$row["doctor_name"]} </td> <td> {$row["date"]} </td><td class='row-data d-none'> {$row["text"]} </td> <td><button type='button' class='btn btn-success rounded-1 cancel-btn' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='showPrescription()' ><i class='far fa-eye '></i> View</button>  </td> </tr>";
               $i++;
             }
         }

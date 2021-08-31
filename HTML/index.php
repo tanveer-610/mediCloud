@@ -158,14 +158,14 @@
                             tabindex="-1"
                           >
                             <div class="modal-dialog modal-dialog-centered">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5
-                                    class="modal-title"
+                              <div class="modal-content custom-form-background">
+                                <div class="modal-header custom-color">
+                                  <h3
+                                    class="modal-title fw-bold"
                                     id="exampleModalToggleLabelDoctor"
                                   >
-                                    Doctor's registration
-                                  </h5>
+                                    Doctor's Registration
+                                  </h3>
                                   <button
                                     type="button"
                                     class="btn-close"
@@ -192,6 +192,7 @@
                                         type="text"
                                         class="form-control"
                                         id="exampleInputNameDoctor"
+                                        placeholder="Write your name here..."
                                       />
                                     </div>
                                     <div class="mb-3">
@@ -206,6 +207,7 @@
                                         class="form-control"
                                         id="exampleInputEmailDoctor"
                                         aria-describedby="emailHelp"
+                                        placeholder="Enter your email here..."
                                       />
                                       <div id="emailHelp" class="form-text">
                                         We'll never share your email with anyone
@@ -223,6 +225,7 @@
                                         type="number"
                                         class="form-control"
                                         id="exampleInputRegDoctor"
+                                        placeholder="Enter your BMDC Reg. No."
                                       />
                                     </div>
                                     <div class="mb-3">
@@ -232,11 +235,11 @@
                                         >Specialist</label
                                       >
                                       <select name="specialist-list" class="form-control" id="exampleInputRegDoctor">
-                                      <option value="none">Select One</option>
-                                        <option value="heart">Heart</option>
-                                        <option value="Bone">Bone</option>
-                                        <option value="surgery">Surgery</option>
-                                        <option value="mental">Mental</option>
+                                          <option value="none">Select One</option>
+                                          <option value="heart">Heart</option>
+                                          <option value="Bone">Bone</option>
+                                          <option value="surgery">Surgery</option>
+                                          <option value="mental">Mental</option>
                                       </select>
                                     </div>
 
@@ -251,19 +254,21 @@
                                         type="text"
                                         class="form-control"
                                         id="exampleInputRegDoctor"
+                                        placeholder="Enter your chamber & Time schedule"
                                       />
                                     </div>
                                     <div class="mb-3">
                                       <label
                                         for="exampleInputRegDoctor"
                                         class="form-label"
-                                        >Number</label
+                                        >Phone Number</label
                                       >
                                       <input
                                         name="doctorNumber"
                                         type="tel"
                                         class="form-control"
                                         id="exampleInputRegDoctor"
+                                        placeholder="Enter your contact number..."
                                       />
                                     </div>
 
@@ -278,6 +283,7 @@
                                         type="password"
                                         class="form-control"
                                         id="exampleInputPasswordDoctor"
+                                        placeholder="Enter your password here..."
                                       />
                                     </div>
                                     <div class="mb-3">
@@ -291,28 +297,14 @@
                                         type="password"
                                         class="form-control"
                                         id="exampleInputPasswordConfirmDoctor"
+                                        placeholder="Re-type your password..."
                                       />
                                     </div>
-                                    <div class="mb-3 form-check">
-                                      <input
-                                        name="doctorCheckbox"
-                                        type="checkbox"
-                                        class="form-check-input"
-                                        id="exampleCheckTerms"
-                                      />
-                                      <label
-                                        class="form-check-label"
-                                        for="exampleCheckTerms"
-                                        >Agree with our terms &
-                                        Conditions.</label
-                                      >
-                                    </div>
-
                                     <button
                                       type="submit"
-                                      class="btn btn-primary"
+                                      class="btn btn-submit-style text-white"
                                     >
-                                      Submit
+                                    <i class="far fa-check-circle me-1"></i>Submit
                                     </button>
                                   </form>
                                 </div>
@@ -467,7 +459,7 @@
                                         type="password"
                                         class="form-control"
                                         id="exampleInputPasswordConfirmPatient"
-                                        placeholder="Re-type your password" 
+                                        placeholder="Re-type your password..." 
                                       />
                                     </div>
 
