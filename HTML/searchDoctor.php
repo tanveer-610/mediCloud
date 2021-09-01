@@ -67,21 +67,16 @@ if(!isset($_SESSION['id'])){
 </div>
 <section class="container p-4">
     <form class="d-flex justify-content-end ms-5" action="" >
+       <div class="">
+        <input type="text" id="myInput" class="p-2 border-1 rounded-1 ms-5 me-2" onkeyup="myFunction()" placeholder="&#xf002; Search Doctor Name" title="Type in a name">
+      </div> 
         
-        <input type="text" id="myInput" class="p-2 border-1 rounded-1 ms-5 me-2" onkeyup="myFunction()" placeholder="Search Doctor Name" title="Type in a name">
-        <div class="dropdown">
-            <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Heart</a></li>
-                <li><a class="dropdown-item" href="#">Bone</a></li>
-                <li><a class="dropdown-item" href="#">Surgery</a></li>
-            </ul>
-        </div>
-        <select class="rounded-1" id="mySelect" onchange="myFilter()">
+        <select class="rounded-1 px-2" id="mySelect" onchange="myFilter()">
               <option value="All" selected>Select Specialist</option>
-              <option value="HEART">Heart</option>
-              <option value="BONE">Bone</option>
+              <option value="Cardiology">Cardiology</option>
+              <option value="Orthopedic">Orthopedic</option>
               <option value="SURGERY">Surgery</option>
-              <option value="MENTAL">Mental</option>     
+              <option value="PSYCHIATRIST">Psychiatrist</option>     
         </select>
         
     </form>
@@ -95,7 +90,7 @@ if(!isset($_SESSION['id'])){
               <th scope="col">ID</th>
               <th scope="col">Name</th>
               <th scope="col">Specialist</th>
-              <th scope="col">Location</th>
+              <th scope="col">Location & Time</th>
               <th scope="col">Appointment</th>
             </tr>
           </thead>
@@ -107,7 +102,7 @@ if(!isset($_SESSION['id'])){
                 $result = mysqli_query($conn, $sql);
                 if(mysqli_num_rows($result) > 0){
                     while($row = $result->fetch_assoc()){
-                        echo "<tr id='{$i}'> <td class='row-data'> {$row["id"]} </td> <td class='row-data'> {$row["name"]} </td> <td> {$row["specialist"]} </td> <td class='row-data'> {$row["chember"]} </td> <td> <button type='button' class='btn btn-outline-success fw-bolder px-3 py-1 rounded-1' data-bs-toggle='modal' data-bs-target='#exampleModal' onClick='myBooking()'>Take Appointment</button>  </td></tr>";
+                        echo "<tr id='{$i}'> <td class='row-data'> {$row["id"]} </td> <td class='row-data'> {$row["name"]} </td> <td> {$row["specialist"]} </td> <td class='row-data'> {$row["chember"]} </td> <td> <button type='button' class='btn btn-outline-success fw-bolder px-3 py-1 rounded-1' data-bs-toggle='modal' data-bs-target='#exampleModal' onClick='myBooking()'><i class='far fa-list-alt'></i> Take Appointment</button>  </td></tr>";
                       $i++;
                     }
                 }
@@ -139,7 +134,7 @@ if(!isset($_SESSION['id'])){
                       <input type="text" name="patientAppointmentDoctorName"  readonly="readonly"  id="appointmentModalDoctorName" class="form-control" value="Jahidul">
                     </div>
                     <div class="mb-3">
-                      <label for="disabledTextInput" class="form-label">Location</label>
+                      <label for="disabledTextInput" class="form-label">Location & Time</label>
                       <input type="text" name="patientAppointmentLocation"  readonly="readonly"  id="appointmentModalDoctorLocation" class="form-control" value="Dhanmondi">
                     </div>
            
@@ -152,8 +147,8 @@ if(!isset($_SESSION['id'])){
                         <input
                         name="patientAppointmentDate"
                         type="date"
-                        class="form-control datepicker"
-                        id="exampleInputAppointDatePatient"
+                        class="form-control"
+                        id="txtdate"
                         aria-describedby="emailHelp"
                         />
                     </div>

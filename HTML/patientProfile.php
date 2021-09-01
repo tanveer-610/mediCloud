@@ -83,19 +83,26 @@ if (mysqli_num_rows($result) > 0) {
   </header>
   <main>
     <section class="container mt-4">
-      <h1 class="card-title text-center mb-4">Profile</h1>
+      <h1 class="card-title text-center mb-4" style="color:#EA493C">Profile</h1>
       <div class="card mb-3 border-0">
-        <div class="row g-0 align-items-center">
-          <div class="col-md-4 d-flex flex-column align-items-center">
-            <div class="profile-image mt-3">
-              <img src="../Assets/Images/doctor.svg" class="img-fluid rounded-circle" height="200" width="200" alt="..." />
+        <div class="row g-0 align-items-center shadow-lg rounded-pill py-3">
+          <div class="col-md-5 d-flex flex-column align-items-center">
+            <div class="profile-image">
+              <img src="../Assets/Images/Patient UI/people.png" class="img-fluid rounded-circle" height="250" width="250" alt="..." />
             </div>
-            <div class="my-3">
-              <button type="button" class="btn btn-success me-2">
-                Edit Photo
-              </button>
+           
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <div class="card-text lh-lg">
+                <label for="patient-profile-name" class="fs-4"><span class="fw-bold" style="color:#555657">Name: </span><?php echo "{$_SESSION['name']}" ?> </label><br />
+                <label for="patient-profile-email" class="fs-4"><span class="fw-bold" style="color:#555657">Email: </span><?php echo "{$email}" ?></label><br />
+                <label for="patient-profile-age" class="fs-4"><span class="fw-bold" style="color:#555657">Age: </span><?php echo "{$age}" ?></label><br />
+                <label for="patient-profile-phone" class="fs-4"><span class="fw-bold" style="color:#555657">Phone: </span><?php echo "{$phone}" ?></label><br />
+                <label for="patient-profile-phone" class="fs-4"><span class="fw-bold" style="color:#555657">Address: </span><?php echo "{$address}" ?></label>
+                <div>
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editPatientProfileBtn">
+              <button type="button" class="btn text-light rounded-pill px-3" style="background-color:#ea493c" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editPatientProfileBtn">
                 Edit Profile
               </button>
 
@@ -104,9 +111,9 @@ if (mysqli_num_rows($result) > 0) {
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content custom-form-background">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">
+                      <h3 class="modal-title fw-bold custom-color" id="exampleModalLabel">
                         Edit Profile
-                      </h5>
+                      </h3>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -162,15 +169,7 @@ if (mysqli_num_rows($result) > 0) {
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-8">
-            <div class="card-body mt-3">
-              <div class="card-text lh-lg fs-4">
-                <label for="patient-profile-name">Name: <?php echo "{$_SESSION['name']}" ?> </label><br />
-                <label for="patient-profile-email">Email: <?php echo "{$email}" ?></label><br />
-                <label for="patient-profile-age">Age: <?php echo "{$age}" ?></label><br />
-                <label for="patient-profile-phone">Phone: <?php echo "{$phone}" ?></label><br />
-                <label for="patient-profile-phone">Address: <?php echo "{$address}" ?></label>
+                
               </div>
             </div>
           </div>

@@ -128,30 +128,39 @@ if(mysqli_num_rows($result) > 0){
     </header>
     <main>
       <section class="container mt-4">
-        <h1 class="card-title text-center mb-4">Profile</h1>
+        <h1 class="card-title text-center mb-4" style="color: #ea5044">Profile</h1>
         <div class="card mb-3 border-0">
-          <div class="row g-0 align-items-center">
-            <div class="col-md-4 d-flex flex-column align-items-center">
-              <div class="profile-image mt-3">
+          <div class="row g-0 align-items-center shadow-lg rounded-pill py-3">
+            <div class="col-md-5 d-flex flex-column align-items-center">
+              <div class="profile-image">
                 <img
-                  src="../Assets/Images/doctor.svg"
+                  src="../Assets/Images/Doctor Ui/doctorAvatar.jpg"
                   class="img-fluid rounded-circle"
-                  height="200"
-                  width="200"
+                  height="250"
+                  width="250"
                   alt="..."
                 />
               </div>
-              <div class="my-3">
-                <button type="button" class="btn btn-success me-2">
-                  Edit Photo
-                </button>
+              
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <div class="card-text lh-lg fs-4">
+                  <label for="patient-profile-name"><span class="fw-bold" style="color: #555657">Name: </span> <?php echo"{$_SESSION['name']}" ?> </label><br />
+                  <label for="patient-profile-email"><span class="fw-bold" style="color: #555657">Email: </span> <?php echo"{$email}" ?></label><br />
+                  <label for="patient-profile-age"><span class="fw-bold" style="color: #555657">Special in: </span> <?php echo"{$specialist}" ?></label><br />
+                  <label for="patient-profile-phone"><span class="fw-bold" style="color: #555657">Phone: </span> <?php echo"{$phone}" ?></label><br />
+                  <label for="patient-profile-phone"><span class="fw-bold" style="color: #555657">Chamber: </span> <?php echo"{$chamber}" ?></label>
+                
+                <div>
                 <!-- Button trigger modal -->
                 <button
                   type="button"
-                  class="btn btn-primary"
+                  class="btn text-light rounded-pill px-3"
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
                   id="editPatientProfileBtn"
+                  style="background-color:#ea493c"
                 >
                   Edit Profile
                 </button>
@@ -310,15 +319,6 @@ if(mysqli_num_rows($result) > 0){
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-8">
-              <div class="card-body mt-3">
-                <div class="card-text lh-lg fs-4">
-                  <label for="patient-profile-name">Name: <?php echo"{$_SESSION['name']}" ?> </label><br />
-                  <label for="patient-profile-email">Email: <?php echo"{$email}" ?></label><br />
-                  <label for="patient-profile-age">Special in: <?php echo"{$specialist}" ?></label><br />
-                  <label for="patient-profile-phone">Phone: <?php echo"{$phone}" ?></label><br />
-                  <label for="patient-profile-phone">Chamber: <?php echo"{$chamber}" ?></label>
                 </div>
               </div>
             </div>
