@@ -236,10 +236,10 @@
                                       >
                                       <select name="specialist-list" class="form-control" id="exampleInputRegDoctor">
                                           <option value="none">Select One</option>
-                                          <option value="heart">Heart</option>
-                                          <option value="Bone">Bone</option>
-                                          <option value="surgery">Surgery</option>
-                                          <option value="mental">Mental</option>
+                                          <option value="Cardiology">Cardiology</option>
+                                          <option value="Orthopedic">Orthopedic</option>
+                                          <option value="Surgery">Surgery</option>
+                                          <option value="Psychiatrist">Psychiatrist</option>
                                       </select>
                                     </div>
 

@@ -73,10 +73,10 @@ if(!isset($_SESSION['id'])){
         
         <select class="rounded-1 px-2" id="mySelect" onchange="myFilter()">
               <option value="All" selected>Select Specialist</option>
-              <option value="HEART">Heart</option>
-              <option value="BONE">Bone</option>
+              <option value="Cardiology">Cardiology</option>
+              <option value="Orthopedic">Orthopedic</option>
               <option value="SURGERY">Surgery</option>
-              <option value="MENTAL">Mental</option>     
+              <option value="PSYCHIATRIST">Psychiatrist</option>     
         </select>
         
     </form>

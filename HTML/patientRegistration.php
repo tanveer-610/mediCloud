@@ -55,6 +55,8 @@ if (isset($_POST['patientName']) && isset($_POST['patientEmail'])){
             header("Location: index.php?errorp=Email already exited");
             exit();
         }else{
+            //hashing password
+            $pass = md5($pass);
             $sql = " INSERT INTO `patient`( `email`, `Password`, `name`, `number`, `address`, `Age`) VALUES ('$email','$pass','$name','$number','$address','$age') ";
             $result = mysqli_query($conn, $sql);
 
