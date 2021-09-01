@@ -57,7 +57,7 @@ if (isset($_POST['doctorName']) && isset($_POST['doctorEmail'])){
             exit();
         }else{
             //hash password here
-            $pass = md5($pass);
+            $pass = md5($pass); 
             $sql = " INSERT INTO `doctor`(`Id`, `email`, `Password`, `name`, `specialist`, `chember`, `number`) VALUES ($id,'$email','$pass','$name','$specialist','$address','$number') ";
             $result = mysqli_query($conn, $sql);
 

@@ -10,6 +10,7 @@ if (isset($_POST['patientAppointmentDate'])){
     $doctor_name = $_POST['patientAppointmentDoctorName'];
     $location = $_POST['patientAppointmentLocation'];
     $date = $_POST['patientAppointmentDate'];
+    // add validation here---------------------------------------------------------------
     
     
     $sql="INSERT INTO `appointment`(`patient_id`, `patient_name`, `doctor_id`, `doctor_name`, `location`, `date`) VALUES ('$patient_id','$patient_name','$doctor_id','$doctor_name','$location','$date');";

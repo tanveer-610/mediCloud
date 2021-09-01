@@ -551,8 +551,8 @@
         </div>
       </section>
       <!-- ----------------------------------- Tost message---------------------- -->
-      <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
-        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"  data-bs-delay="1000">
+      <div class="position-fixed top-0 end-0 p-3 mt-5" style="z-index: 11">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"  data-bs-delay="1500">
             <div class="toast-body bg-danger text-light">
                 Login First
             </div>

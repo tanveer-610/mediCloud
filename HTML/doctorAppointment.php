@@ -155,7 +155,6 @@ if(!isset($_SESSION['id'])){
   function viewPatientDetails(){
 
   var rowId =event.target.parentNode.parentNode.id;
-  console.log("here");
               
   var data = document.getElementById(rowId).querySelectorAll(".row-data"); 
   var appointment_id = data[0].innerHTML;
@@ -167,6 +166,22 @@ if(!isset($_SESSION['id'])){
    document.getElementById("doctorAppointmentViewPatientId").value = patientId;
 }
 
+</script>
+
+<script>
+ 
+function cancleAppointment(){
+  var rowId =event.target.parentNode.parentNode.id;
+ 
+              //this gives id of tr whose button was clicked
+  var data = document.getElementById(rowId).querySelectorAll(".row-data"); 
+              /*returns array of all elements with 
+              "row-data" class within the row with given id*/
+   var id = data[0].innerHTML;
+   document.getElementById("appointmentId").value = id;
+ 
+}
+ 
 </script>
 
 </body>

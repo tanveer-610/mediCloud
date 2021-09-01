@@ -15,6 +15,7 @@ if (mysqli_num_rows($result) > 0) {
   $phone = $row["number"];
   $address = $row["address"];
   $password = $row["Password"];
+
 } else {
   $email = "";
   $age = "";
@@ -153,7 +154,7 @@ if (mysqli_num_rows($result) > 0) {
 
                         <div class="mb-3">
                           <label for="exampleInputPasswordPatient" class="form-label">Password</label>
-                          <input name="patientPassword" type="password" class="form-control" id="exampleInputPasswordPatient" value="<?php echo "{$password}" ?>" />
+                          <input name="patientPassword" type="password" class="form-control" id="exampleInputPasswordPatient" placeholder="*******" />
                         </div>
                         <div class="mb-3">
                           <label for="exampleInputPasswordConfirmPatient" class="form-label">Confirm Password</label>

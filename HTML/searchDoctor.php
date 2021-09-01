@@ -224,7 +224,7 @@ function myBooking(){
    var id = data[0].innerHTML;
   var name = data[1].innerHTML;
    var location = data[2].innerHTML;
-  
+
    document.getElementById("appointmentModalDoctorId").value = id;
    document.getElementById("appointmentModalDoctorName").value = name;
    document.getElementById("appointmentModalDoctorLocation").value = location;
