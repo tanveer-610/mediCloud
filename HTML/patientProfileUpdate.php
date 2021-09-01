@@ -44,6 +44,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: patientProfile.php?error=Confrim password not matched");
 	    exit();
     }else{
+        $pass = md5($pass);
             $sql = " UPDATE `patient` SET `Id`='{$_SESSION['id']}',`email`='{$email}',`Password`='{$pass}',`name`='{$name}',`number`={$number},`address`='{$address}',`Age`={$age} WHERE Id={$_SESSION['id']};";
            //echo $sql;
             $result = mysqli_query($conn, $sql);

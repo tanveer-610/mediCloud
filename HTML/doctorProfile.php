@@ -288,7 +288,7 @@ if(mysqli_num_rows($result) > 0){
                               type="password"
                               class="form-control"
                               id="exampleInputPasswordDoctor"
-                              value="<?php echo "{$password}"?>"
+                              placeholder="*******"
                               
                             />
                           </div>

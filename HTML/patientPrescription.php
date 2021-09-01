@@ -119,13 +119,13 @@ if(!isset($_SESSION['id'])){
 
 <script>
 function showPrescription(){
-  console.log("here1"); 
+
 
   var rowId =event.target.parentNode.parentNode.id;
               
   var data = document.getElementById(rowId).querySelectorAll(".row-data"); 
   var prescription = data[0].innerHTML;
-  console.log(prescription);
+
   var modal = document.getElementById("prescription").value = prescription;
 }
 
