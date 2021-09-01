@@ -29,7 +29,7 @@ if (isset($_POST['loginEmail']) && isset($_POST['loginPassword'])) {
 	}
 	else{
 		// hashing the password
-        // $pass = md5($pass);
+        $pass = md5($pass);
         if($radio == "Doctor"){
 			$sql = "SELECT * FROM doctor WHERE email='$email' AND Password='$pass'";
 
@@ -53,6 +53,7 @@ if (isset($_POST['loginEmail']) && isset($_POST['loginPassword'])) {
 				//  }
 			}else{
 				header("Location: index.php?error=Incorect Email or password");
+				
 				exit();
 			}
 			
@@ -79,6 +80,7 @@ if (isset($_POST['loginEmail']) && isset($_POST['loginPassword'])) {
 				// 	exit();
 				//  }
 			}else{
+				
 				header("Location: index.php?error=Incorect Email or password");
 				exit();
 			}

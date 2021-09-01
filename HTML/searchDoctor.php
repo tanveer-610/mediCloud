@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include "doctorDatabase.php";
 $searchValue="all";
 if(!isset($_SESSION['id'])){
@@ -151,7 +152,7 @@ if(!isset($_SESSION['id'])){
                         <input
                         name="patientAppointmentDate"
                         type="date"
-                        class="form-control"
+                        class="form-control datepicker"
                         id="exampleInputAppointDatePatient"
                         aria-describedby="emailHelp"
                         />
