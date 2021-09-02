@@ -11,17 +11,21 @@ if (isset($_POST['patientAppointmentDate'])){
     $location = $_POST['patientAppointmentLocation'];
     $date = $_POST['patientAppointmentDate'];
     // add validation here---------------------------------------------------------------
-    
-    
-    $sql="INSERT INTO `appointment`(`patient_id`, `patient_name`, `doctor_id`, `doctor_name`, `location`, `date`) VALUES ('$patient_id','$patient_name','$doctor_id','$doctor_name','$location','$date');";
-	if ($conn->query($sql) === TRUE) {
-        header("Location: patientAppointment.php");
+    $today = date("Y-m-d");
+    if($date >= $today){
+                $sql="INSERT INTO `appointment`(`patient_id`, `patient_name`, `doctor_id`, `doctor_name`, `location`, `date`) VALUES ('$patient_id','$patient_name','$doctor_id','$doctor_name','$location','$date');";
+        if ($conn->query($sql) === TRUE) {
+            header("Location: patientAppointment.php");
+            exit();
+        } else {
+            header("Location: searchDoctor.php?error=something went wrong");
+            exit();
+        }
+    }else{
+        header("Location: searchDoctor.php?errord=Invalid date");
         exit();
-    } else {
-        header("Location: searchDoctor.php?error=something went wrong");
-        exit();
-      }
-
+    }
+    
 }else{
     header("Location: searchDoctor.php");
     exit();

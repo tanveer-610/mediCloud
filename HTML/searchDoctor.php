@@ -162,13 +162,38 @@ if(!isset($_SESSION['id'])){
 </form>
 
 </section>
+
+      <!-- ----------------------------------- Tost message---------------------- -->
+      <div class="position-fixed top-0 end-0 p-3 mt-5" style="z-index: 11">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"  data-bs-delay="1500">
+            <div class="toast-body bg-danger text-light">
+                Invalid Date!
+            </div>
+        </div>
+    </div>
+    <?php   
+      if (isset($_GET['errord'])) {
+        echo '<script type="text/javascript"> var warnDate=1;  </script>';
+      }
+    ?>
+
+
 <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
       crossorigin="anonymous">
   </script>
 <!-- ------------------------ search js----------------------------------- -->
+
+
+
 <script>
+    if(warnDate == 1){
+          var toastLiveExample = document.getElementById('liveToast');
+          var toast = new bootstrap.Toast(toastLiveExample);
+          toast.show();      
+        
+    }
    
 function myFunction() {
   var input, filter, table, tr, td, i, txtValue;
