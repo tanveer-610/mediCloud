@@ -15,6 +15,16 @@ if(mysqli_num_rows($result) > 0){
   $chamber =$row["chember"];
   $phone =$row["number"];
   $password = $row["Password"];
+  if($specialist == "Cardiology"){
+    echo '<script> var i = 0;  </script>';
+  }else if($specialist == "Orthopedic"){
+    echo '<script> var i = 1;  </script>';
+  }else if($specialist == "Surgery"){
+    echo '<script> var i = 2;  </script>';
+  }else{
+    echo '<script> var i = 3;  </script>';
+  }
+ 
 }else{
   $email = "";
   $chamber ="";
@@ -236,14 +246,12 @@ if(mysqli_num_rows($result) > 0){
                               class="form-label"
                               >specialist</label
                             >
-                            <input
-                              name="doctorSpecialist"
-                              type="text"
-                              class="form-control"
-                              id="exampleInputSpecialistDoctor"
-                              placeholder="Write your bla bla..."
-                              value="<?php echo"{$specialist}"; ?>"
-                            />
+                            <select name="doctorSpecialist" class="form-control" id="exampleInputRegDoctor">
+                                          <option value="Cardiology">Cardiology</option>
+                                          <option value="Orthopedic">Orthopedic</option>
+                                          <option value="Surgery">Surgery</option>
+                                          <option value="Psychiatrist">Psychiatrist</option>
+                                      </select>
                           </div>
                           <div class="mb-3">
                             <label
@@ -335,6 +343,10 @@ if(mysqli_num_rows($result) > 0){
     ></script>
 
     <script> 
+        var specialList = document.querySelector('#exampleInputRegDoctor');
+        specialList[i].selected = true;
+        i
+
         if(flag==1){
                   var patientProfileUpdateModal = document.getElementById("editPatientProfileBtn");
         patientProfileUpdateModal.click(); 
