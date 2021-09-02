@@ -100,16 +100,16 @@ if(!isset($_SESSION['id'])){
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="../Assets/Images/Doctor Ui/doctor-1.jpg" class="d-block img-fluid mx-auto" alt="...">
+      <img src="../Assets/Images/Doctor Ui/doctor-1.jpg" class="d-block img-fluid mx-auto rounded-3" alt="...">
     </div>
     <div class="carousel-item ">
-      <img src="../Assets/Images/Doctor Ui/doctor-2.jpg" class="d-block img-fluid mx-auto" alt="...">
+      <img src="../Assets/Images/Doctor Ui/doctor-2.jpg" class="d-block img-fluid mx-auto rounded-3" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="../Assets/Images/Doctor Ui/doctor-3.jpg" class="d-block img-fluid mx-auto" alt="...">
+      <img src="../Assets/Images/Doctor Ui/doctor-3.jpg" class="d-block img-fluid mx-auto rounded-3" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="../Assets/Images/Doctor Ui/doctor-4.jpg" class="d-block img-fluid mx-auto" alt="...">
+      <img src="../Assets/Images/Doctor Ui/doctor-4.jpg" class="d-block img-fluid mx-auto rounded-3" alt="...">
     </div> 
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
