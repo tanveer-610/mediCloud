@@ -27,7 +27,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center fw-bold fs-3" href="#">
-                    <img src="../Assets/Images/doctor.svg" alt="" width="40" height="40" class="d-inline-block align-text-top me-2" /> <span style="color:#EA5044">Medi</span><span style="color:#555657">Cloud</span>
+                    <img src="../Assets/Images/doctor.png" alt="" width="55" height="55" class="d-inline-block align-text-top me-2" /> <span style="color:#EA5044">Medi</span><span style="color:#555657">Cloud</span>
                 </a>
                 <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -507,7 +507,7 @@
           <div class="row g-lg-4 gy-3 align-items-center">
             <div class="col-lg-6 col-sm-12">
               <h1 class="moto">
-                <span class="" style="color:#EA493C">Healthy People,</span><br/>
+                <span style="color:#EA493C">Healthy People,</span><br/>
                 <span>Healthy Nation</span>
               </h1>
               <p class="text-muted mt-4"> <i>
@@ -526,21 +526,21 @@
                   <div class="carousel-item active carousel-item-height">
                     <img
                       src="../Assets/Images/Doctor-1.jpg"
-                      class="d-block w-100"
+                      class="d-block w-100 rounded-3"
                       alt="..."
                     />
                   </div>
                   <div class="carousel-item carousel-item-height">
                     <img
                       src="../Assets/Images/Doctor-2.jpg"
-                      class="d-block w-100"
+                      class="d-block w-100 rounded-3"
                       alt="..."
                     />
                   </div>
                   <div class="carousel-item carousel-item-height">
                     <img
                       src="../Assets/Images/Doctor-3.jpg"
-                      class="d-block w-100"
+                      class="d-block w-100 rounded-3"
                       alt="..."
                     />
                   </div>

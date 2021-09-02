@@ -72,20 +72,9 @@ if(mysqli_num_rows($result) > 0){
       <!-- nav-bar add. -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-          <a
-            class="navbar-brand d-flex align-items-center fw-bold fs-3"
-            href="patientHome.php"
-          >
-            <img
-              src="../Assets/Images/doctor.svg"
-              alt=""
-              width="40"
-              height="40"
-              class="d-inline-block align-text-top me-2"
-            />
-            <span style="color: #ea5044">Medi</span
-            ><span style="color: #555657">Cloud</span>
-          </a>
+        <a class="navbar-brand d-flex align-items-center fw-bold fs-3" href="doctorHome.php">
+                    <img src="../Assets/Images/doctor.png" alt="" width="55" height="55" class="d-inline-block align-text-top me-2" /> <span style="color:#EA5044">Medi</span><span style="color:#555657">Cloud</span>
+                </a>
           <button
             class="navbar-toggler"
             type="button"
@@ -155,12 +144,12 @@ if(mysqli_num_rows($result) > 0){
             </div>
             <div class="col-md-7">
               <div class="card-body">
-                <div class="card-text lh-lg fs-4">
-                  <label for="patient-profile-name"><span class="fw-bold" style="color: #555657">Name: </span> <?php echo"{$_SESSION['name']}" ?> </label><br />
-                  <label for="patient-profile-email"><span class="fw-bold" style="color: #555657">Email: </span> <?php echo"{$email}" ?></label><br />
-                  <label for="patient-profile-age"><span class="fw-bold" style="color: #555657">Special in: </span> <?php echo"{$specialist}" ?></label><br />
-                  <label for="patient-profile-phone"><span class="fw-bold" style="color: #555657">Phone: </span> <?php echo"{$phone}" ?></label><br />
-                  <label for="patient-profile-phone"><span class="fw-bold" style="color: #555657">Chamber: </span> <?php echo"{$chamber}" ?></label>
+                <div class="card-text lh-lg">
+                  <label for="patient-profile-name" class="fs-4"><span class="fw-bold" style="color: #555657">Name: </span> <?php echo"{$_SESSION['name']}" ?> </label><br />
+                  <label for="patient-profile-email" class="fs-4"><span class="fw-bold" style="color: #555657">Email: </span> <?php echo"{$email}" ?></label><br />
+                  <label for="patient-profile-age" class="fs-4"><span class="fw-bold" style="color: #555657">Special in: </span> <?php echo"{$specialist}" ?></label><br />
+                  <label for="patient-profile-phone" class="fs-4"><span class="fw-bold" style="color: #555657">Phone: </span> <?php echo"{$phone}" ?></label><br />
+                  <label for="patient-profile-phone" class="fs-4"><span class="fw-bold" style="color: #555657">Chamber: </span> <?php echo"{$chamber}" ?></label>
                 
                 <div>
                 <!-- Button trigger modal -->
@@ -186,9 +175,9 @@ if(mysqli_num_rows($result) > 0){
                   <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content custom-form-background">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
+                        <h3 class="modal-title fw-bold custom-color" id="exampleModalLabel">
                           Edit Profile
-                        </h5>
+                        </h3>
                         <button
                           type="button"
                           class="btn-close"
@@ -236,15 +225,13 @@ if(mysqli_num_rows($result) > 0){
                               readonly="readonly"
                               value="<?php echo"{$email}"; ?>"
                             />
-                            <div id="emailHelp" class="form-text">
-                              We'll never share your email with anyone else.
-                            </div>
+                            
                           </div>
                           <div class="mb-3">
                             <label
                               for="exampleInputSpecialistDoctor"
                               class="form-label"
-                              >specialist</label
+                              >Specialist</label
                             >
                             <select name="doctorSpecialist" class="form-control" id="exampleInputRegDoctor">
                                           <option value="Cardiology">Cardiology</option>
@@ -273,7 +260,7 @@ if(mysqli_num_rows($result) > 0){
                             <label
                               for="exampleInputAddressDoctor"
                               class="form-label"
-                              >Chamber&Time</label
+                              >Chamber & Time</label
                             >
                             <input
                               name="doctorAddress"

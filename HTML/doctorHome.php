@@ -30,20 +30,9 @@ if(!isset($_SESSION['id'])){
       <!-- nav-bar add. -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-          <a
-            class="navbar-brand d-flex align-items-center fw-bold fs-3"
-            href="patientHome.php"
-          >
-            <img
-              src="../Assets/Images/doctor.svg"
-              alt=""
-              width="40"
-              height="40"
-              class="d-inline-block align-text-top me-2"
-            />
-            <span style="color: #ea5044">Medi</span
-            ><span style="color: #555657">Cloud</span>
-          </a>
+        <a class="navbar-brand d-flex align-items-center fw-bold fs-3" href="doctorHome.php">
+                    <img src="../Assets/Images/doctor.png" alt="" width="55" height="55" class="d-inline-block align-text-top me-2" /> <span style="color:#EA5044">Medi</span><span style="color:#555657">Cloud</span>
+                </a>
           <button
             class="navbar-toggler"
             type="button"
@@ -101,7 +90,38 @@ if(!isset($_SESSION['id'])){
   ?>
 </section>
 
-
+<section class="container mt-5">
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../Assets/Images/Doctor Ui/doctor-1.jpg" class="d-block img-fluid mx-auto" alt="...">
+    </div>
+    <div class="carousel-item ">
+      <img src="../Assets/Images/Doctor Ui/doctor-2.jpg" class="d-block img-fluid mx-auto" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../Assets/Images/Doctor Ui/doctor-3.jpg" class="d-block img-fluid mx-auto" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../Assets/Images/Doctor Ui/doctor-4.jpg" class="d-block img-fluid mx-auto" alt="...">
+    </div> 
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</section>
 
 
     
