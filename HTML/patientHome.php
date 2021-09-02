@@ -87,7 +87,7 @@ if(!isset($_SESSION['id'])){
       <img src="../Assets/Images/Patient Ui/x-ray.png" class="h-75 w-50 mx-auto my-3" alt="...">
       <div class="card-body">
         <h3 class="card-title text-center">Orthopedic</h3>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text">We have enlisted worldclass Orthopedic surgeons, who specialize in the musculoskeletal system - the bones, joints, ligaments, tendons, and muscles. Following issues? Can take our service.</p>
       </div>
     </div>
   </div>
@@ -95,8 +95,8 @@ if(!isset($_SESSION['id'])){
     <div class="card h-100 card-shadow">
       <img src="../Assets/Images/Patient Ui/pills.png" class="h-75 w-50 mx-auto my-3" alt="...">
       <div class="card-body">
-        <h3 class="card-title text-center">Medicine</h3>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h3 class="card-title text-center">Cardiologist</h3>
+        <p class="card-text">With our system you get service from best Cardiologist. A cardiologist is a medical doctor who studies and treats diseases and conditions of the cardiovascular system.</p>
       </div>
     </div>
   </div>
@@ -105,7 +105,7 @@ if(!isset($_SESSION['id'])){
       <img src="../Assets/Images/Patient Ui/medical-team.png" class="h-75 w-50 mx-auto my-3" alt="...">
       <div class="card-body">
         <h3 class="card-title text-center">Surgery</h3>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text">You can take service from qualified surgeon. Who specializes in evaluating and treating conditions that may require surgery, or physically changing the human body.</p>
       </div>
     </div>
   </div>
